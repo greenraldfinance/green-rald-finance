@@ -1,5 +1,275 @@
 
+
 <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Green Rald Finance - Explore personal, home, business, education, gold and vehicle loans, banking and financial services.">
+<title>Green Rald Finance | Loans & Financial Services</title>
+<style>
+:root{--green:#075c3b;--dark:#063c2b;--gold:#e7c568;--cream:#f6f8f2;--muted:#60766c}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#17392c;background:white;line-height:1.6}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit}
+header{background:white;position:sticky;top:0;z-index:10;box-shadow:0 2px 12px #0000000d}
+.nav{max-width:1150px;margin:auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--dark);line-height:1.15;letter-spacing:1px}
+.mark{background:var(--gold);color:var(--dark);border-radius:12px;padding:9px;font-size:24px;font-weight:900}
+nav{display:flex;align-items:center;gap:18px;flex-wrap:wrap;font-size:14px}
+nav a:hover{color:#13824e}
+.btn{display:inline-block;background:var(--green);color:white;padding:12px 20px;border:0;border-radius:30px;font-weight:bold;cursor:pointer;text-align:center}
+.btn:hover{background:var(--dark)}
+.btn.gold{background:var(--gold);color:var(--dark)}
+.btn.outline{background:transparent;color:var(--green);border:1px solid var(--green)}
+.hero{background:linear-gradient(120deg,#eef8ef,#f8f5e7);padding:65px 20px}
+.hero-inner{max-width:1150px;margin:auto;display:grid;grid-template-columns:1.2fr .8fr;gap:35px;align-items:center}
+.eyebrow{color:#16814c;font-weight:bold;letter-spacing:1px;text-transform:uppercase;font-size:13px}
+h1{font-size:clamp(36px,5vw,58px);line-height:1.08;color:var(--dark);margin:14px 0}
+h2{color:var(--dark);font-size:30px;line-height:1.2;margin:8px 0}
+h3{margin:10px 0;color:var(--dark)}
+p{color:var(--muted)}
+.hero p{font-size:18px;max-width:610px}
+.hero-art{min-height:280px;border-radius:28px;background:radial-gradient(circle at 70% 25%,#d8edab,transparent 35%),linear-gradient(145deg,#0b7148,#073d2d);display:flex;flex-direction:column;justify-content:center;align-items:center;color:white;text-align:center;padding:28px;box-shadow:0 16px 40px #064c3220}
+.hero-art .coins{font-size:78px;line-height:1.3}
+.hero-art strong{font-size:25px;color:var(--gold)}
+.hero-art span{font-size:15px}
+.wrap{max-width:1150px;margin:auto;padding:48px 20px}
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:-1px;background:#f7fbf7;padding:22px max(20px,calc((100% - 1110px)/2))}
+.feature{text-align:center;padding:10px}
+.feature b{display:block;color:var(--dark)}
+.feature span{font-size:13px;color:var(--muted)}
+.section-head{margin-bottom:24px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{border:1px solid #e0ece4;border-radius:18px;padding:22px;background:white;box-shadow:0 6px 20px #103d2310}
+.card .emoji{font-size:31px}
+.card p{font-size:14px}
+.card a{color:#087b45;font-weight:bold;font-size:14px}
+.card:hover{transform:translateY(-3px);box-shadow:0 10px 26px #103d2318}
+.partner{background:var(--cream)}
+.partner-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.partner .card{display:flex;flex-direction:column;align-items:flex-start}
+.partner .btn{margin-top:auto}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.step{text-align:center;padding:22px}
+.step .num{background:var(--green);color:white;border-radius:50%;width:44px;height:44px;display:inline-grid;place-items:center;font-weight:bold}
+.calc{background:#f4f9f4;border-radius:20px;padding:25px;display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.field{display:block;margin:12px 0}
+.field input,.field select,.field textarea{display:block;width:100%;padding:12px;border:1px solid #ccd9ce;border-radius:9px;background:white;margin-top:6px}
+.result{background:var(--dark);color:white;border-radius:16px;padding:25px;align-self:stretch}
+.result p,.result h3{color:white}
+.result strong{font-size:30px;color:var(--gold)}
+.contact{background:#edf6ed}
+footer{background:#052f23;color:white;padding:38px 20px}
+.footer-inner{max-width:1150px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:25px}
+footer p,footer a{color:#d6e5dc;font-size:14px}
+.disclaimer{border-top:1px solid #ffffff30;margin-top:25px;padding-top:18px;font-size:12px;color:#c5d8ce}
+small{color:var(--muted)}
+@media(max-width:760px){
+ .nav{align-items:flex-start;flex-direction:column}
+ nav{gap:12px}
+ .hero{padding:42px 0}
+ .hero-inner{grid-template-columns:1fr}
+ .hero-art{min-height:200px}
+ .features{grid-template-columns:repeat(2,1fr)}
+ .cards,.partner-grid{grid-template-columns:1fr}
+ .steps{grid-template-columns:1fr}
+ .calc{grid-template-columns:1fr}
+ .footer-inner{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<header>
+ <div class="nav">
+  <a href="#home" class="logo"><span class="mark">GR</span><span>GREEN RALD<br>FINANCE</span></a>
+  <nav>
+   <a href="#home">Home</a>
+   <a href="#services">Loan Services</a>
+   <a href="#partners">Our Partners</a>
+   <a href="#calculator">EMI Calculator</a>
+   <a href="#contact">Contact</a>
+  </nav>
+  <a class="btn" href="#contact">Get Started</a>
+ </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+ <div class="hero-inner">
+  <div>
+   <div class="eyebrow">Your financial journey starts here</div>
+   <h1>Grow Your Future with Green Rald Finance</h1>
+   <p>Explore loan options, banking services and financial solutions in one place. Simple guidance to help you take your next financial step.</p>
+   <a class="btn" href="#services">Explore Services</a>
+   <a class="btn outline" href="#contact">Contact Us</a>
+   <p><small>Loan approval, rates and eligibility are determined by the respective financial institution.</small></p>
+  </div>
+  <div class="hero-art">
+   <div class="coins">🌱 💰 📈</div>
+   <strong>Plan. Grow. Prosper.</strong>
+   <span>Make informed financial decisions.</span>
+  </div>
+ </div>
+</section>
+
+<div class="features">
+ <div class="feature"><div class="emoji">🤝</div><b>Personal Guidance</b><span>Help exploring options</span></div>
+ <div class="feature"><div class="emoji">📋</div><b>Simple Process</b><span>Clear next steps</span></div>
+ <div class="feature"><div class="emoji">🏦</div><b>Financial Partners</b><span>Partner service links</span></div>
+ <div class="feature"><div class="emoji">🔒</div><b>Privacy Awareness</b><span>Use official channels</span></div>
+</div>
+
+<section class="wrap" id="services">
+ <div class="section-head">
+  <div class="eyebrow">Our services</div>
+  <h2>Financial Solutions for Your Needs</h2>
+  <p>Explore available products and request information about the option that suits you.</p>
+ </div>
+ <div class="cards">
+  <article class="card"><div class="emoji">👤</div><h3>Personal Loan</h3><p>Explore options for personal expenses and planned needs.</p><a href="#contact">Enquire now →</a></article>
+  <article class="card"><div class="emoji">🏠</div><h3>Home Loan</h3><p>Explore financing options for buying or building a home.</p><a href="#contact">Enquire now →</a></article>
+  <article class="card"><div class="emoji">💼</div><h3>Business Loan</h3><p>Explore funding options for business needs and expansion.</p><a href="#contact">Enquire now →</a></article>
+  <article class="card"><div class="emoji">🎓</div><h3>Education Loan</h3><p>Learn about funding options for education expenses.</p><a href="#contact">Enquire now →</a></article>
+  <article class="card"><div class="emoji">🪙</div><h3>Gold Loan</h3><p>Ask about gold-backed loan products from eligible lenders.</p><a href="#contact">Enquire now →</a></article>
+  <article class="card"><div class="emoji">🚗</div><h3>Vehicle Loan</h3><p>Explore financing for eligible new or used vehicles.</p><a href="#contact">Enquire now →</a></article>
+  <article class="card"><div class="emoji">🏪</div><h3>Mudra / MSME Loan</h3><p>Explore eligible small-business financing options.</p><a href="#contact">Enquire now →</a></article>
+  <article class="card"><div class="emoji">📈</div><h3>Demat Account</h3><p>Find account-opening options through supported providers.</p><a href="#partners">Explore partners →</a></article>
+  <article class="card"><div class="emoji">🏦</div><h3>Savings Account</h3><p>Explore account-opening services offered by financial partners.</p><a href="#partners">Explore partners →</a></article>
+ </div>
+</section>
+
+<section class="partner" id="partners">
+ <div class="wrap">
+  <div class="section-head">
+   <div class="eyebrow">Partner platforms</div>
+   <h2>Explore Our Financial Partners</h2>
+   <p>Use the available partner link or contact us for guidance.</p>
+  </div>
+  <div class="partner-grid">
+   <article class="card">
+    <div class="emoji">🔗</div><h3>BankSathi</h3>
+    <p>Explore financial products through our BankSathi referral link. Product availability and eligibility depend on the provider.</p>
+    <a class="btn" href="https://leads.banksathi.com/?h=QUYyTTZqNUgwMkNBOUdsRm41UTBGQT09" target="_blank" rel="noopener noreferrer">Visit BankSathi</a>
+   </article>
+   <article class="card">
+    <div class="emoji">🏦</div><h3>MyFIRST Partner</h3>
+    <p>For IDFC FIRST Bank-related partner enquiries, contact us for the appropriate official application link.</p>
+    <a class="btn" href="#contact">Request Information</a>
+   </article>
+   <article class="card">
+    <div class="emoji">🌐</div><h3>WeRize</h3>
+    <p>Ask us about available financial products and the correct official partner application route.</p>
+    <a class="btn" href="#contact">Request Information</a>
+   </article>
+  </div>
+  <p><small>Partner names are used to identify the platforms. Green Rald Finance is not claiming to be a bank or the lender. Use official partner websites for final applications.</small></p>
+ </div>
+</section>
+
+<section class="wrap" id="calculator">
+ <div class="section-head">
+  <div class="eyebrow">Plan your repayments</div>
+  <h2>Loan EMI Calculator</h2>
+  <p>Estimate a monthly instalment. This is an illustration, not a loan offer.</p>
+ </div>
+ <div class="calc">
+  <div>
+   <label class="field">Loan amount (₹)<input id="amount" type="number" min="1000" value="500000"></label>
+   <label class="field">Annual interest rate (%)<input id="rate" type="number" min="0" max="60" step="0.1" value="12"></label>
+   <label class="field">Loan term (years)<input id="years" type="number" min="1" max="40" value="5"></label>
+   <button class="btn" type="button" onclick="calculateEMI()">Calculate EMI</button>
+  </div>
+  <div class="result">
+   <p>Estimated monthly EMI</p>
+   <strong id="emi">₹11,122</strong>
+   <p>Total repayment: <b id="total">₹6,67,320</b></p>
+   <p>Estimated interest: <b id="interest">₹1,67,320</b></p>
+  </div>
+ </div>
+</section>
+
+<section class="contact" id="contact">
+ <div class="wrap">
+  <div class="section-head">
+   <div class="eyebrow">Get in touch</div>
+   <h2>Request a Call Back</h2>
+   <p>Enter your details to create an enquiry message in WhatsApp. Do not send PINs, passwords, OTPs or full banking details.</p>
+  </div>
+  <form id="contactForm">
+   <div class="calc">
+    <div>
+     <label class="field">Full name<input id="name" required maxlength="80" placeholder="Your name"></label>
+     <label class="field">Mobile number<input id="phone" required type="tel" maxlength="15" placeholder="Your contact number"></label>
+    </div>
+    <div>
+     <label class="field">Service required
+      <select id="service" required>
+       <option value="">Select a service</option>
+       <option>Personal Loan</option><option>Home Loan</option>
+       <option>Business Loan</option><option>Education Loan</option>
+       <option>Gold Loan</option><option>Vehicle Loan</option>
+       <option>Mudra / MSME Loan</option><option>Demat Account</option>
+       <option>Savings Account</option><option>CIBIL / Credit Score</option>
+       <option>Other Financial Service</option>
+      </select>
+     </label>
+     <label class="field">Message (optional)<textarea id="message" rows="3" maxlength="500" placeholder="How can we help?"></textarea></label>
+     <button class="btn" type="submit">Send Enquiry via WhatsApp</button>
+    </div>
+   </div>
+  </form>
+  <p><small>Submitting opens WhatsApp with your message; it does not save information on this website.</small></p>
+  <p><b>Credit score:</b> <a href="https://www.cibil.com/" target="_blank" rel="noopener noreferrer">Visit the official CIBIL website</a> to check available credit-score services and terms.</p>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="footer-inner">
+  <div><a href="#home" class="logo" style="color:white"><span class="mark">GR</span><span>GREEN RALD<br>FINANCE</span></a><p>Helping you explore financial options with greater clarity.</p></div>
+  <div><h3 style="color:#e7c568">Quick Links</h3><p><a href="#services">Loan Services</a></p><p><a href="#partners">Our Partners</a></p><p><a href="#calculator">EMI Calculator</a></p></div>
+  <div><h3 style="color:#e7c568">Contact</h3><p>WhatsApp: +91 84188 02885</p><p><a href="#contact">Send an Enquiry</a></p><p>India</p></div>
+ </div>
+ <div class="disclaimer">Disclaimer: Green Rald Finance is a financial-services information and referral website, not a bank or lender. Loan approval, interest rates, fees, eligibility and disbursal are determined by the relevant financial institution. No approval or outcome is guaranteed. Partner referrals may be subject to partner terms. Verify all details on official websites before applying. © <span id="year"></span> Green Rald Finance.</div>
+</footer>
+
+<script>
+function formatINR(value){
+ return new Intl.NumberFormat('en-IN',{style:'currency',currency:'INR',maximumFractionDigits:0}).format(value);
+}
+function calculateEMI(){
+ const P=Number(document.getElementById('amount').value);
+ const annual=Number(document.getElementById('rate').value);
+ const years=Number(document.getElementById('years').value);
+ if(!Number.isFinite(P)||!Number.isFinite(annual)||!Number.isFinite(years)||P<=0||annual<0||annual>60||years<=0||years>40){
+  alert('Please enter valid loan details.');return;
+ }
+ const n=Math.round(years*12),r=annual/1200;
+ const emi=r===0?P/n:P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);
+ const total=emi*n;
+ document.getElementById('emi').textContent=formatINR(emi);
+ document.getElementById('total').textContent=formatINR(total);
+ document.getElementById('interest').textContent=formatINR(total-P);
+}
+document.getElementById('contactForm').addEventListener('submit',function(e){
+ e.preventDefault();
+ const name=document.getElementById('name').value.trim();
+ const phone=document.getElementById('phone').value.trim();
+ const service=document.getElementById('service').value;
+ const message=document.getElementById('message').value.trim();
+ if(!name||!phone||!service){alert('Please complete the required fields.');return;}
+ const text='Hello Green Rald Finance, I would like to enquire about your services.\nName: '+name+'\nContact: '+phone+'\nService: '+service+'\nMessage: '+message;
+ window.open('https://wa.me/918418802885?text='+encodeURIComponent(text),'_blank','noopener,noreferrer');
+});
+document.getElementById('year').textContent=new Date().getFullYear();
+calculateEMI();
+</script>
+</body>
+</html>
+ html>
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
