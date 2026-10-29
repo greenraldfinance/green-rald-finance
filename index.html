@@ -1,557 +1,298 @@
 
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#064c35">
+<meta name="description" content="Green Rald Finance - Explore loan categories, account services and financial information.">
+<title>Green Rald Finance | Financial Services</title>
+<style>
+:root{--green:#08734b;--dark:#063b2b;--gold:#dfbd61;--light:#f3f8f2;--line:#dce9df;--muted:#64786d}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:95px}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#193e30;background:#fff;line-height:1.6}
+a{text-decoration:none;color:inherit}
+button,input,select,textarea{font:inherit}
+header{position:sticky;top:0;z-index:20;background:#ffffffef;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{max-width:1180px;margin:auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.brand svg{width:54px;height:54px}
+.brand-name{font-size:16px;line-height:1.12;font-weight:900;letter-spacing:1.3px;color:var(--dark)}
+.brand-name small{display:block;font-size:10px;font-weight:500;letter-spacing:2px;margin-top:5px;color:var(--green)}
+nav{display:flex;align-items:center;gap:17px;font-size:13px;font-weight:700}
+nav a:hover{color:var(--green)}
+.btn{display:inline-block;border:0;border-radius:28px;background:var(--green);color:white;padding:12px 19px;font-weight:700;text-align:center;cursor:pointer}
+.btn:hover{background:var(--dark)}
+.btn-light{background:white;color:var(--green);border:1px solid var(--green)}
+.wrap{max-width:1180px;margin:auto;padding:52px 22px}
+.hero{background:linear-gradient(120deg,#f0f7e9,#fff9e8);overflow:hidden}
+.hero-inner{max-width:1180px;margin:auto;padding:64px 22px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:35px}
+.kicker{font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--green)}
+h1{font-size:clamp(39px,5vw,63px);line-height:1.06;letter-spacing:-1.5px;color:var(--dark);margin:14px 0}
+h2{font-size:30px;line-height:1.2;color:var(--dark);margin:8px 0}
+h3{font-size:17px;line-height:1.3;color:var(--dark);margin:10px 0}
+p{color:var(--muted);margin:8px 0 16px}
+.hero p{font-size:17px;max-width:570px}
+.actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:23px}
+.hero-visual{position:relative;min-height:320px;border-radius:25px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse at 75% 20%,#d9ed9d 0,transparent 38%),linear-gradient(145deg,#dcebd1,#fff4d7)}
+.sun{position:absolute;right:12%;top:12%;width:80px;height:80px;border-radius:50%;background:#e4c56e}
+.growth{position:absolute;bottom:0;width:100%;height:38%;background:linear-gradient(0deg,#b2d59d,#e1edc8);clip-path:polygon(0 45%,25% 10%,48% 48%,75% 0,100% 30%,100% 100%,0 100%)}
+.plant{position:absolute;bottom:31px;right:13%;font-size:72px}
+.house{position:absolute;bottom:28px;left:12%;font-size:72px}
+.coins{position:absolute;bottom:22px;left:43%;font-size:45px}
+.visual-label{position:absolute;top:25px;left:25px;font-size:22px;font-weight:800;color:var(--green);max-width:170px}
+.trust{display:grid;grid-template-columns:repeat(4,1fr);max-width:1180px;margin:auto;padding:18px 22px;gap:10px}
+.trust div{text-align:center;border-right:1px solid var(--line);padding:10px}
+.trust div:last-child{border:0}
+.trust b{display:block;color:var(--dark);font-size:14px}
+.trust span{font-size:12px;color:var(--muted)}
+.section-head{margin-bottom:24px}
+.section-head p{margin-bottom:0}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.card{padding:20px;border:1px solid var(--line);border-radius:15px;background:white;box-shadow:0 5px 18px #123b2308;min-width:0;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 10px 25px #123b2314}
+.card-top{display:flex;align-items:center;gap:12px}
+.ico{width:43px;height:43px;flex:0 0 43px;border-radius:13px;background:#e9f4e9;display:grid;place-items:center;font-size:23px}
+.card h3{margin:0;font-size:16px}
+.card p{font-size:13px;margin:12px 0}
+.card-link{display:inline-block;color:var(--green);font-size:13px;font-weight:800;margin-top:3px}
+.card-link:hover{text-decoration:underline}
+.soft{background:var(--light)}
+.personal-grid,.service-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.other-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.notice{font-size:12px}
+.calculator{display:grid;grid-template-columns:1fr 1fr;gap:25px;background:var(--light);padding:25px;border-radius:20px}
+.field{display:block;font-size:13px;font-weight:700;margin:12px 0}
+.field input,.field select,.field textarea{display:block;width:100%;margin-top:6px;padding:12px;border:1px solid #cbdccf;border-radius:9px;background:white;color:#193e30}
+.result{background:var(--dark);border-radius:16px;padding:25px;color:white;display:flex;flex-direction:column;justify-content:center}
+.result p,.result h3{color:white}
+.result strong{font-size:30px;color:var(--gold)}
+.contact{background:#edf6ec}
+.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:22px;align-items:stretch}
+.contact-intro{border-radius:18px;padding:28px;background:linear-gradient(145deg,#e2efd5,#fff4d9)}
+.contact-form{background:#fff;border:1px solid var(--line);padding:24px;border-radius:18px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+.full{grid-column:1/-1}
+footer{background:#052f23;color:white;padding:36px 22px 18px}
+.footer-inner{max-width:1180px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:28px}
+footer h3{color:var(--gold)}
+footer p,footer a{color:#d5e5db;font-size:13px}
+footer a:hover{color:var(--gold)}
+.footer-bottom{max-width:1180px;margin:22px auto 0;border-top:1px solid #ffffff2b;padding-top:16px;font-size:12px;color:#c4d8cc}
+@media(max-width:850px){
+.nav{flex-wrap:wrap}.nav nav{order:3;width:100%;overflow-x:auto;padding:5px 0 3px;gap:18px}.nav nav a{white-space:nowrap}
+.hero-inner{grid-template-columns:1fr;padding:44px 22px}.hero-visual{min-height:240px}
+.personal-grid,.cards,.service-grid,.other-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.contact-grid{grid-template-columns:1fr}
 }
- .features{grid-template-columns:repeat(2,1fr)}
- .cards,.partner-grid{grid-template-columns:1fr}
- .steps{grid-template-columns:1fr}
- .calc{grid-template-columns:1fr}
- .footer-inner{grid-template-columns:1fr}
+@media(max-width:520px){
+.wrap{padding:38px 16px}.hero-inner{padding:40px 16px}
+.brand svg{width:47px;height:47px}.brand-name{font-size:14px}
+.nav{padding:10px 16px}.nav>.btn{padding:9px 13px;font-size:12px}
+h1{font-size:41px}h2{font-size:26px}
+.trust{grid-template-columns:repeat(2,1fr);padding:12px}
+.trust div:nth-child(2){border-right:0}
+.personal-grid,.cards,.other-grid,.service-grid{grid-template-columns:1fr}
+.calculator{grid-template-columns:1fr;padding:16px}
+.form-grid{grid-template-columns:1fr}.full{grid-column:auto}
+.footer-inner{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
 <header>
- <div class="nav">
-  <a href="#home" class="logo"><span class="mark">GR</span><span>GREEN RALD<br>FINANCE</span></a>
-  <nav>
-   <a href="#home">Home</a>
-   <a href="#services">Loan Services</a>
-   <a href="#partners">Our Partners</a>
-   <a href="#calculator">EMI Calculator</a>
-   <a href="#contact">Contact</a>
-  </nav>
-  <a class="btn" href="#contact">Get Started</a>
- </div>
+<div class="nav">
+<a class="brand" href="#home" aria-label="Green Rald Finance home">
+<svg viewBox="0 0 100 100" role="img" aria-label="GR logo">
+<defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0b8054"/><stop offset="1" stop-color="#043b2b"/></linearGradient></defs>
+<rect x="2" y="2" width="96" height="96" rx="25" fill="url(#lg)"/>
+<path d="M73 12 Q88 9 88 24 Q74 25 68 19" fill="#dfbd61"/>
+<path d="M78 9 Q77 20 68 27" fill="none" stroke="#dfbd61" stroke-width="3"/>
+<text x="50" y="69" text-anchor="middle" font-size="48" font-weight="900" font-family="Arial" fill="#dfbd61">GR</text>
+</svg>
+<span class="brand-name">GREEN RALD<br>FINANCE<small>PLAN · GROW · PROSPER</small></span>
+</a>
+<nav aria-label="Main navigation">
+<a href="#home">Home</a><a href="#personal">Personal Loans</a><a href="#loans">All Loans</a><a href="#services">Services</a><a href="#calculator">EMI Calculator</a>
+</nav>
+<a class="btn" href="#contact">Contact Us</a>
+</div>
 </header>
 
 <main>
 <section class="hero" id="home">
- <div class="hero-inner">
-  <div>
-   <div class="eyebrow">Your financial journey starts here</div>
-   <h1>Grow Your Future with Green Rald Finance</h1>
-   <p>Explore loan options, banking services and financial solutions in one place. Simple guidance to help you take your next financial step.</p>
-   <a class="btn" href="#services">Explore Services</a>
-   <a class="btn outline" href="#contact">Contact Us</a>
-   <p><small>Loan approval, rates and eligibility are determined by the respective financial institution.</small></p>
-  </div>
-  <div class="hero-art">
-   <div class="coins">🌱 💰 📈</div>
-   <strong>Plan. Grow. Prosper.</strong>
-   <span>Make informed financial decisions.</span>
-  </div>
- </div>
+<div class="hero-inner">
+<div>
+<div class="kicker">Your financial journey starts here</div>
+<h1>Green Rald Finance</h1>
+<h2>Financial solutions for a brighter future</h2>
+<p>Explore loan categories, account services and useful financial resources in one place. Understand your options and make informed decisions for your future.</p>
+<div class="actions"><a class="btn" href="#loans">Explore Services →</a><a class="btn btn-light" href="#contact">Contact Us</a></div>
+<p class="notice">Loan availability and approval depend on the relevant financial institution.</p>
+</div>
+<div class="hero-visual" aria-label="Financial growth illustration">
+<div class="sun"></div><div class="visual-label">Your Goals.<br>Our Support.</div>
+<div class="growth"></div><div class="house">🏠</div><div class="coins">🪙</div><div class="plant">🌱</div>
+</div>
+</div>
 </section>
 
-<div class="features">
- <div class="feature"><div class="emoji">🤝</div><b>Personal Guidance</b><span>Help exploring options</span></div>
- <div class="feature"><div class="emoji">📋</div><b>Simple Process</b><span>Clear next steps</span></div>
- <div class="feature"><div class="emoji">🏦</div><b>Financial Partners</b><span>Partner service links</span></div>
- <div class="feature"><div class="emoji">🔒</div><b>Privacy Awareness</b><span>Use official channels</span></div>
+<div class="trust">
+<div><b>✓ Clear Information</b><span>Know your options</span></div>
+<div><b>₹ Financial Planning</b><span>Plan repayments</span></div>
+<div><b>⌂ Multiple Services</b><span>Loans and accounts</span></div>
+<div><b>♡ Customer Support</b><span>Send an enquiry</span></div>
 </div>
 
-<section class="wrap" id="services">
- <div class="section-head">
-  <div class="eyebrow">Our services</div>
-  <h2>Financial Solutions for Your Needs</h2>
-  <p>Explore available products and request information about the option that suits you.</p>
- </div>
- <div class="cards">
-  <article class="card"><div class="emoji">👤</div><h3>Personal Loan</h3><p>Explore options for personal expenses and planned needs.</p><a href="#contact">Enquire now →</a></article>
-  <article class="card"><div class="emoji">🏠</div><h3>Home Loan</h3><p>Explore financing options for buying or building a home.</p><a href="#contact">Enquire now →</a></article>
-  <article class="card"><div class="emoji">💼</div><h3>Business Loan</h3><p>Explore funding options for business needs and expansion.</p><a href="#contact">Enquire now →</a></article>
-  <article class="card"><div class="emoji">🎓</div><h3>Education Loan</h3><p>Learn about funding options for education expenses.</p><a href="#contact">Enquire now →</a></article>
-  <article class="card"><div class="emoji">🪙</div><h3>Gold Loan</h3><p>Ask about gold-backed loan products from eligible lenders.</p><a href="#contact">Enquire now →</a></article>
-  <article class="card"><div class="emoji">🚗</div><h3>Vehicle Loan</h3><p>Explore financing for eligible new or used vehicles.</p><a href="#contact">Enquire now →</a></article>
-  <article class="card"><div class="emoji">🏪</div><h3>Mudra / MSME Loan</h3><p>Explore eligible small-business financing options.</p><a href="#contact">Enquire now →</a></article>
-  <article class="card"><div class="emoji">📈</div><h3>Demat Account</h3><p>Find account-opening options through supported providers.</p><a href="#partners">Explore partners →</a></article>
-  <article class="card"><div class="emoji">🏦</div><h3>Savings Account</h3><p>Explore account-opening services offered by financial partners.</p><a href="#partners">Explore partners →</a></article>
- </div>
+<section class="wrap soft" id="personal">
+<div class="section-head"><div class="kicker">Personal loan categories</div><h2>Personal Loan for Every Need</h2><p>Choose the purpose that best describes your requirement.</p></div>
+<div class="cards personal-grid">
+<article class="card"><div class="card-top"><div class="ico">👤</div><h3>Salaried Personal Loan</h3></div><p>Explore options for eligible employees with regular income.</p><a class="card-link" href="#contact" data-service="Personal Loan - Salaried">Enquire →</a></article>
+<article class="card"><div class="card-top"><div class="ico">💼</div><h3>Self-Employed Personal Loan</h3></div><p>Explore personal borrowing options for eligible self-employed applicants.</p><a class="card-link" href="#contact" data-service="Personal Loan - Self-Employed">Enquire →</a></article>
+<article class="card"><div class="card-top"><div class="ico">🏥</div><h3>Medical Emergency Loan</h3></div><p>Explore funding options for unexpected medical expenses.</p><a class="card-link" href="#contact" data-service="Medical Emergency Loan">Enquire →</a></article>
+<article class="card"><div class="card-top"><div class="ico">💍</div><h3>Wedding Personal Loan</h3></div><p>Explore personal finance for eligible wedding expenses.</p><a class="card-link" href="#contact" data-service="Wedding Loan">Enquire →</a></article>
+<article class="card"><div class="card-top"><div class="ico">✈️</div><h3>Travel Personal Loan</h3></div><p>Review borrowing options for eligible travel expenses.</p><a class="card-link" href="#contact" data-service="Travel Loan">Enquire →</a></article>
+<article class="card"><div class="card-top"><div class="ico">🎓</div><h3>Education-Related Personal Loan</h3></div><p>Explore personal financing for eligible education-related needs.</p><a class="card-link" href="#contact" data-service="Education-Related Personal Loan">Enquire →</a></article>
+<article class="card"><div class="card-top"><div class="ico">🏡</div><h3>Home Renovation Loan</h3></div><p>Explore personal borrowing for eligible home improvement expenses.</p><a class="card-link" href="#contact" data-service="Home Renovation Personal Loan">Enquire →</a></article>
+<article class="card"><div class="card-top"><div class="ico">💳</div><h3>Debt Consolidation</h3></div><p>Ask lenders about options to consolidate eligible existing debt.</p><a class="card-link" href="#contact" data-service="Debt Consolidation">Enquire →</a></article>
+<article class="card"><div class="card-top"><div class="ico">🆘</div><h3>Emergency Personal Loan</h3></div><p>Explore personal finance options for unexpected expenses.</p><a class="card-link" href="#contact" data-service="Emergency Personal Loan">Enquire →</a></article>
+</div>
+<p class="notice">These are common borrowing purposes, not guaranteed separate products. Lenders determine product availability and eligibility.</p>
 </section>
 
-<section class="partner" id="partners">
- <div class="wrap">
-  <div class="section-head">
-   <div class="eyebrow">Partner platforms</div>
-   <h2>Explore Our Financial Partners</h2>
-   <p>Use the available partner link or contact us for guidance.</p>
-  </div>
-  <div class="partner-grid">
-   <article class="card">
-    <div class="emoji">🔗</div><h3>BankSathi</h3>
-    <p>Explore financial products through our BankSathi referral link. Product availability and eligibility depend on the provider.</p>
-    <a class="btn" href="https://leads.banksathi.com/?h=QUYyTTZqNUgwMkNBOUdsRm41UTBGQT09" target="_blank" rel="noopener noreferrer">Visit BankSathi</a>
-   </article>
-   <article class="card">
-    <div class="emoji">🏦</div><h3>MyFIRST Partner</h3>
-    <p>For IDFC FIRST Bank-related partner enquiries, contact us for the appropriate official application link.</p>
-    <a class="btn" href="#contact">Request Information</a>
-   </article>
-   <article class="card">
-    <div class="emoji">🌐</div><h3>WeRize</h3>
-    <p>Ask us about available financial products and the correct official partner application route.</p>
-    <a class="btn" href="#contact">Request Information</a>
-   </article>
-  </div>
-  <p><small>Partner names are used to identify the platforms. Green Rald Finance is not claiming to be a bank or the lender. Use official partner websites for final applications.</small></p>
- </div>
+<section class="wrap" id="loans">
+<div class="section-head"><div class="kicker">Other loan categories</div><h2>Explore All Loan Types</h2><p>Every loan category is listed separately for easy access.</p></div>
+<div class="cards other-grid">
+<article class="card"><div class="card-top"><div class="ico">🏠</div><h3>Home Loan</h3></div><p>Purchase, construction and eligible home improvement finance.</p><a class="card-link" href="#contact" data-service="Home Loan">Enquire →</a></article>
+<article class="card"><div class="card-top"><div class="ico">🏢</div><h3>Loan Against Property</h3></div><p>Ask about secured borrowing against eligible property.</p><a class="card-link" href="#contact" data-service="Loan Against Property">Enquire →</a></article>
+<article class="card"><div class="card-top"><div class="ico">🏪</div><h3>Business Loan</h3></div><p>Financing options for eligible business needs and growth.</p><a class="card-link" href="#contact" data-service="Business Loan">Enquire →</a></article>
+<article class="card"><div class="card-top"><div class="ico">🏭</div><h3>MSME Loan</h3></div><p>Explore finance for eligible micro, small and medium enterprises.</p><a class="card-link" href="#contact" data-service="MSME Loan">Enquire →</a></article>
+<article class="card"><div class="card-top"><div class="ico">🇮🇳</div><h3>Mudra Loan</h3></div><p>Learn about applicable micro-enterprise lending schemes.</p><a class="card-link" href="#contact" data-service="Mudra Loan">Enquire →</a></article>
+<article class="card"><div class="card-top"><div class="ico">🎓</div><h3>Education Loan</h3></div><p>Explore eligible higher education and study-related funding.</p><a class="card-link" href="#contact" data-service="Education Loan">Enquire →</a></article>
+<article class="card"><div class="card-top"><div class="ico">🪙</div><h3>Gold Loan</h3></div><p>Learn about borrowing secured against eligible gold assets.</p><a class="card-link" href="#contact" data-service="Gold Loan">Enquire →</a></article>
+<article class="card"><div class="card-top"><div class="ico">🚗</div><h3>Car Loan</h3></div><p>Explore finance for eligible new or used cars.</p><a class="card-link" href="#contact" data-service="Car Loan">Enquire →</a></article>
+<article class="card"><div class="card-top"><div class="ico">🏍️</div><h3>Two-Wheeler Loan</h3></div><p>Explore motorcycle and scooter finance options.</p><a class="card-link" href="#contact" data-service="Two-Wheeler Loan">Enquire →</a></article>
+<article class="card"><div class="card-top"><div class="ico">🚚</div><h3>Commercial Vehicle Loan</h3></div><p>Vehicle financing options for eligible commercial use.</p><a class="card-link" href="#contact" data-service="Commercial Vehicle Loan">Enquire →</a></article>
+<article class="card"><div class="card-top"><div class="ico">🌾</div><h3>Agriculture Loan</h3></div><p>Explore agriculture finance through applicable institutions.</p><a class="card-link" href="#contact" data-service="Agriculture Loan">Enquire →</a></article>
+<article class="card"><div class="card-top"><div class="ico">🔄</div><h3>Loan Balance Transfer</h3></div><p>Compare transfer options and applicable fees with lenders.</p><a class="card-link" href="#contact" data-service="Loan Balance Transfer">Enquire →</a></article>
+<article class="card"><div class="card-top"><div class="ico">💼</div><h3>Working Capital Finance</h3></div><p>Explore finance to support eligible business cash-flow needs.</p><a class="card-link" href="#contact" data-service="Working Capital Finance">Enquire →</a></article>
+<article class="card"><div class="card-top"><div class="ico">⚙️</div><h3>Equipment Loan</h3></div><p>Explore financing for eligible machinery and equipment.</p><a class="card-link" href="#contact" data-service="Equipment Loan">Enquire →</a></article>
+<article class="card"><div class="card-top"><div class="ico">📈</div><h3>Loan Against Securities</h3></div><p>Ask authorised providers about secured credit and its risks.</p><a class="card-link" href="#contact" data-service="Loan Against Securities">Enquire →</a></article>
+</div>
+</section>
+
+<section class="wrap soft" id="services">
+<div class="section-head"><div class="kicker">Accounts and financial services</div><h2>More Than Just Loans</h2><p>Explore banking and other financial resources.</p></div>
+<div class="cards service-grid">
+<article class="card"><div class="card-top"><div class="ico">📊</div><h3>Demat Account</h3></div><p>Learn about account opening through a registered broker or depository participant.</p><a class="card-link" href="#contact" data-service="Demat Account">Enquire →</a></article>
+<article class="card"><div class="card-top"><div class="ico">🏦</div><h3>Savings Account</h3></div><p>Explore account features, eligibility, charges and official opening channels.</p><a class="card-link" href="#contact" data-service="Savings Account">Enquire →</a></article>
+<article class="card"><div class="card-top"><div class="ico">📉</div><h3>CIBIL / Credit Score</h3></div><p>Access official credit-report and credit-score information.</p><a class="card-link" href="https://www.cibil.com/" target="_blank" rel="noopener noreferrer">Official CIBIL Website →</a></article>
+<article class="card"><div class="card-top"><div class="ico">💳</div><h3>Credit Card Information</h3></div><p>Review card features, charges, eligibility and repayment terms.</p><a class="card-link" href="#contact" data-service="Credit Card Information">Enquire →</a></article>
+<article class="card"><div class="card-top"><div class="ico">🛡️</div><h3>Insurance Information</h3></div><p>Learn about insurance products through authorised providers.</p><a class="card-link" href="#contact" data-service="Insurance Information">Enquire →</a></article>
+<article class="card"><div class="card-top"><div class="ico">🧮</div><h3>EMI Calculator</h3></div><p>Estimate monthly instalments and total loan repayment.</p><a class="card-link" href="#calculator">Calculate EMI →</a></article>
+</div>
 </section>
 
 <section class="wrap" id="calculator">
- <div class="section-head">
-  <div class="eyebrow">Plan your repayments</div>
-  <h2>Loan EMI Calculator</h2>
-  <p>Estimate a monthly instalment. This is an illustration, not a loan offer.</p>
- </div>
- <div class="calc">
-  <div>
-   <label class="field">Loan amount (₹)<input id="amount" type="number" min="1000" value="500000"></label>
-   <label class="field">Annual interest rate (%)<input id="rate" type="number" min="0" max="60" step="0.1" value="12"></label>
-   <label class="field">Loan term (years)<input id="years" type="number" min="1" max="40" value="5"></label>
-   <button class="btn" type="button" onclick="calculateEMI()">Calculate EMI</button>
-  </div>
-  <div class="result">
-   <p>Estimated monthly EMI</p>
-   <strong id="emi">₹11,122</strong>
-   <p>Total repayment: <b id="total">₹6,67,320</b></p>
-   <p>Estimated interest: <b id="interest">₹1,67,320</b></p>
-  </div>
- </div>
+<div class="section-head"><div class="kicker">Financial planning</div><h2>Loan EMI Calculator</h2><p>Estimate your monthly payment. Actual lender terms may differ.</p></div>
+<div class="calculator">
+<div>
+<label class="field">Loan amount (₹)<input id="amount" type="number" min="1000" max="1000000000" value="500000" required></label>
+<label class="field">Annual interest rate (%)<input id="rate" type="number" min="0" max="60" step=".1" value="12" required></label>
+<label class="field">Loan term (years)<input id="years" type="number" min="1" max="40" value="5" required></label>
+<button class="btn" id="calcBtn" type="button">Calculate EMI</button>
+</div>
+<div class="result" aria-live="polite"><p>Estimated monthly EMI</p><strong id="emi">₹11,122</strong><p>Total repayment: <b id="total">₹6,67,320</b></p><p>Estimated interest: <b id="interest">₹1,67,320</b></p></div>
+</div>
 </section>
 
 <section class="contact" id="contact">
- <div class="wrap">
-  <div class="section-head">
-   <div class="eyebrow">Get in touch</div>
-   <h2>Request a Call Back</h2>
-   <p>Enter your details to create an enquiry message in WhatsApp. Do not send PINs, passwords, OTPs or full banking details.</p>
-  </div>
-  <form id="contactForm">
-   <div class="calc">
-    <div>
-     <label class="field">Full name<input id="name" required maxlength="80" placeholder="Your name"></label>
-     <label class="field">Mobile number<input id="phone" required type="tel" maxlength="15" placeholder="Your contact number"></label>
-    </div>
-    <div>
-     <label class="field">Service required
-      <select id="service" required>
-       <option value="">Select a service</option>
-       <option>Personal Loan</option><option>Home Loan</option>
-       <option>Business Loan</option><option>Education Loan</option>
-       <option>Gold Loan</option><option>Vehicle Loan</option>
-       <option>Mudra / MSME Loan</option><option>Demat Account</option>
-       <option>Savings Account</option><option>CIBIL / Credit Score</option>
-       <option>Other Financial Service</option>
-      </select>
-     </label>
-     <label class="field">Message (optional)<textarea id="message" rows="3" maxlength="500" placeholder="How can we help?"></textarea></label>
-     <button class="btn" type="submit">Send Enquiry via WhatsApp</button>
-    </div>
-   </div>
-  </form>
-  <p><small>Submitting opens WhatsApp with your message; it does not save information on this website.</small></p>
-  <p><b>Credit score:</b> <a href="https://www.cibil.com/" target="_blank" rel="noopener noreferrer">Visit the official CIBIL website</a> to check available credit-score services and terms.</p>
- </div>
-</section>
-</main>
-
-<footer>
- <div class="footer-inner">
-  <div><a href="#home" class="logo" style="color:white"><span class="mark">GR</span><span>GREEN RALD<br>FINANCE</span></a><p>Helping you explore financial options with greater clarity.</p></div>
-  <div><h3 style="color:#e7c568">Quick Links</h3><p><a href="#services">Loan Services</a></p><p><a href="#partners">Our Partners</a></p><p><a href="#calculator">EMI Calculator</a></p></div>
-  <div><h3 style="color:#e7c568">Contact</h3><p>WhatsApp: +91 84188 02885</p><p><a href="#contact">Send an Enquiry</a></p><p>India</p></div>
- </div>
- <div class="disclaimer">Disclaimer: Green Rald Finance is a financial-services information and referral website, not a bank or lender. Loan approval, interest rates, fees, eligibility and disbursal are determined by the relevant financial institution. No approval or outcome is guaranteed. Partner referrals may be subject to partner terms. Verify all details on official websites before applying. © <span id="year"></span> Green Rald Finance.</div>
-</footer>
-
-<script>
-function formatINR(value){
- return new Intl.NumberFormat('en-IN',{style:'currency',currency:'INR',maximumFractionDigits:0}).format(value);
-}
-function calculateEMI(){
- const P=Number(document.getElementById('amount').value);
- const annual=Number(document.getElementById('rate').value);
- const years=Number(document.getElementById('years').value);
- if(!Number.isFinite(P)||!Number.isFinite(annual)||!Number.isFinite(years)||P<=0||annual<0||annual>60||years<=0||years>40){
-  alert('Please enter valid loan details.');return;
- }
- const n=Math.round(years*12),r=annual/1200;
- const emi=r===0?P/n:P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);
- const total=emi*n;
- document.getElementById('emi').textContent=formatINR(emi);
- document.getElementById('total').textContent=formatINR(total);
- document.getElementById('interest').textContent=formatINR(total-P);
-}
-document.getElementById('contactForm').addEventListener('submit',function(e){
- e.preventDefault();
- const name=document.getElementById('name').value.trim();
- const phone=document.getElementById('phone').value.trim();
- const service=document.getElementById('service').value;
- const message=document.getElementById('message').value.trim();
- if(!name||!phone||!service){alert('Please complete the required fields.');return;}
- const text='Hello Green Rald Finance, I would like to enquire about your services.\nName: '+name+'\nContact: '+phone+'\nService: '+service+'\nMessage: '+message;
- window.open('https://wa.me/918418802885?text='+encodeURIComponent(text),'_blank','noopener,noreferrer');
-});
-document.getElementById('year').textContent=new Date().getFullYear();
-calculateEMI();
-</script>
-</body>
-</html>
- html>
-<html lang="hi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#0b2e22">
-<meta name="description" content="GREEN RALD FINANCE - लोन, क्रेडिट कार्ड और EMI की जानकारी।">
-<title>GREEN RALD FINANCE | Financial Services</title>
-<style>
-:root{
-  --green:#0b2e22;--green2:#14513a;--gold:#d9b76b;
-  --cream:#f6f5ef;--white:#fff;--muted:#64736b;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--cream);color:#172b21;
-font-family:Arial,"Noto Sans Devanagari",sans-serif;line-height:1.6}
-a{color:inherit}
-button,input,select{font:inherit}
-button,a{ -webkit-tap-highlight-color:transparent}
-header{background:var(--green);color:white}
-nav{max-width:1120px;margin:auto;padding:17px 22px;display:flex;
-align-items:center;justify-content:space-between;gap:14px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
-.logo{height:45px;width:45px;border-radius:12px;background:var(--gold);
-color:var(--green);display:grid;place-items:center;font-size:23px;font-weight:900}
-.brand-name{font-weight:800;letter-spacing:1px;line-height:1.25}
-.brand-name small{display:block;color:var(--gold);letter-spacing:3px}
-.navlinks{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
-.navlinks a{text-decoration:none;font-size:14px}
-.hero{max-width:1120px;margin:auto;padding:55px 22px 65px;
-display:grid;grid-template-columns:1.3fr .7fr;gap:32px;align-items:center}
-.eyebrow{color:var(--gold);font-size:13px;font-weight:bold;letter-spacing:2px}
-h1{font-size:clamp(32px,5vw,54px);line-height:1.16;margin:13px 0}
-.hero p{color:#d7e4dc;max-width:590px}
-.hero-card{border:1px solid #52715f;background:#123b2c;padding:25px;border-radius:22px}
-.hero-card .big{font-size:28px;color:var(--gold);font-weight:800}
-.hero-card p{font-size:14px}
-.btn{display:inline-block;border:0;border-radius:9px;padding:12px 18px;
-background:var(--gold);color:var(--green);font-weight:800;text-decoration:none;
-cursor:pointer;text-align:center}
-.btn-outline{background:transparent;color:white;border:1px solid #b9c8be}
-.btn-green{background:var(--green2);color:white}
-.wrap{max-width:1120px;margin:auto;padding:30px 22px}
-.section-title{text-align:center;margin-bottom:25px}
-.section-title h2{font-size:clamp(25px,4vw,34px);margin:0 0 7px;color:var(--green)}
-.section-title p{color:var(--muted);margin:0}
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.card{background:white;padding:23px;border-radius:16px;border:1px solid #e6e8df;
-box-shadow:0 8px 24px #153c1710}
-.card-icon{height:48px;width:48px;border-radius:13px;background:#f6edda;
-color:#89651f;display:grid;place-items:center;font-size:24px}
-.card h3{margin:13px 0 6px}
-.card p{color:var(--muted);font-size:14px}
-.card a{font-weight:bold;color:#14513a;text-decoration:none}
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
-label{display:block;font-weight:700;font-size:14px;margin:13px 0 5px}
-input,select{width:100%;padding:12px;border:1px solid #d8ded8;
-border-radius:9px;background:white;color:#172b21}
-.result{background:#edf5ef;padding:15px;border-radius:10px;margin-top:15px}
-.result strong{font-size:25px;color:var(--green)}
-.note{font-size:12px;color:var(--muted)}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px 12px}
-.full{grid-column:1/-1}
-.admin-area{display:none;margin-top:16px}
-.table-wrap{overflow-x:auto}
-table{width:100%;border-collapse:collapse;font-size:13px}
-th,td{padding:10px;border-bottom:1px solid #e5e8e1;text-align:left}
-footer{margin-top:35px;background:var(--green);color:#e4ece6;padding:30px 22px}
-.footer-inner{max-width:1120px;margin:auto}
-footer a{color:var(--gold)}
-hr{border:0;border-top:1px solid #496657;margin:20px 0}
-@media(max-width:760px){
- .hero{grid-template-columns:1fr;padding-top:38px}
- .grid{grid-template-columns:1fr}
- .two-col{grid-template-columns:1fr}
- .navlinks{gap:10px;justify-content:flex-end}
- .navlinks a{font-size:12px}
- .brand-name{font-size:13px}
- .logo{height:39px;width:39px}
- .form-grid{grid-template-columns:1fr}
- .full{grid-column:auto}
-}
-</style>
-</head>
-<body>
-<header>
-<nav>
-<a class="brand" href="#">
-  <span class="logo">GR</span>
-  <span class="brand-name">GREEN RALD<small>FINANCE</small></span>
-</a>
-<div class="navlinks">
-  <a href="#services">सेवाएँ</a>
-  <a href="#emi">EMI</a>
-  <a href="#apply">Apply Now</a>
+<div class="wrap">
+<div class="contact-grid">
+<div class="contact-intro"><div class="kicker">Let's connect</div><h2>Get Financial Information</h2><p>Choose a service and send an enquiry through WhatsApp. We will help you find the appropriate next step.</p><p><b>Green Rald Finance</b></p><p>Never share your OTP, PIN, password or full card details.</p></div>
+<form class="contact-form" id="contactForm">
+<h2>Request an Enquiry</h2>
+<div class="form-grid">
+<label class="field">Full name<input id="name" maxlength="80" required autocomplete="name" placeholder="Your name"></label>
+<label class="field">Mobile number<input id="phone" type="tel" maxlength="15" required autocomplete="tel" placeholder="Your number"></label>
+<label class="field full">Select service<select id="service" required><option value="">Choose a service</option>
+<option>Personal Loan - Salaried</option><option>Personal Loan - Self-Employed</option><option>Medical Emergency Loan</option><option>Wedding Loan</option><option>Travel Loan</option><option>Education-Related Personal Loan</option><option>Home Renovation Personal Loan</option><option>Debt Consolidation</option><option>Emergency Personal Loan</option>
+<option>Home Loan</option><option>Loan Against Property</option><option>Business Loan</option><option>MSME Loan</option><option>Mudra Loan</option><option>Education Loan</option><option>Gold Loan</option><option>Car Loan</option><option>Two-Wheeler Loan</option><option>Commercial Vehicle Loan</option><option>Agriculture Loan</option><option>Loan Balance Transfer</option><option>Working Capital Finance</option><option>Equipment Loan</option><option>Loan Against Securities</option><option>Demat Account</option><option>Savings Account</option><option>CIBIL / Credit Score</option><option>Credit Card Information</option><option>Insurance Information</option><option>Other Financial Service</option>
+</select></label>
+<label class="field full">Message (optional)<textarea id="message" rows="3" maxlength="500" placeholder="What information do you need?"></textarea></label>
 </div>
-</nav>
-<div class="hero">
-  <div>
-    <div class="eyebrow">YOUR FINANCIAL INFORMATION PARTNER</div>
-    <h1>आपके सपनों के लिए<br><span style="color:#d9b76b">बेहतर वित्तीय विकल्प</span></h1>
-    <p>Personal Loan, Business Loan, Credit Card और CIBIL से जुड़ी जानकारी आसान भाषा में प्राप्त करें। अपनी ज़रूरत के अनुसार जानकारी लें और संबंधित वित्तीय संस्था की शर्तें जाँचें।</p>
-    <a class="btn" href="#apply">अपनी ज़रूरत बताएँ →</a>
-    <a class="btn btn-outline" href="#services">सेवाएँ देखें</a>
-  </div>
-  <div class="hero-card">
-    <div class="eyebrow">GREEN RALD FINANCE</div>
-    <div class="big">सही जानकारी।</div>
-    <div class="big">सोच-समझकर फैसला।</div>
-    <p>लोन की ब्याज दर, पात्रता और मंजूरी संबंधित बैंक या वित्तीय संस्था तय करती है।</p>
-    <hr>
-    <a class="btn" href="#emi">EMI कैलकुलेट करें</a>
-  </div>
+<button class="btn" type="submit">Send Enquiry on WhatsApp</button>
+<p class="notice">This form opens WhatsApp; it does not save details in a website database.</p>
+</form>
 </div>
-</header>
-
-<main>
-<section class="wrap" id="services">
-  <div class="section-title">
-    <h2>हमारी सेवाएँ</h2>
-    <p>अपनी ज़रूरत के अनुसार विकल्प चुनें</p>
-  </div>
-  <div class="grid">
-    <article class="card">
-      <div class="card-icon">₹</div><h3>Personal Loan</h3>
-      <p>व्यक्तिगत खर्चों के लिए लोन की पात्रता और शर्तों की जानकारी लें।</p>
-      <a href="#apply" data-product="Personal Loan">जानकारी लें →</a>
-    </article>
-    <article class="card">
-      <div class="card-icon">▤</div><h3>Business Loan</h3>
-      <p>व्यवसाय के लिए उपलब्ध वित्तीय विकल्पों के बारे में पूछें।</p>
-      <a href="#apply" data-product="Business Loan">जानकारी लें →</a>
-    </article>
-    <article class="card">
-      <div class="card-icon">▣</div><h3>Credit Card</h3>
-      <p>कार्ड के शुल्क, ब्याज और पात्रता की जानकारी समझें।</p>
-      <a href="#apply" data-product="Credit Card">जानकारी लें →</a>
-    </article>
-    <article class="card">
-      <div class="card-icon">↗</div><h3>CIBIL सहायता</h3>
-      <p>अपनी क्रेडिट रिपोर्ट और स्कोर की जानकारी आधिकारिक वेबसाइट से लें।</p>
-      <a href="https://www.cibil.com/" target="_blank" rel="noopener">CIBIL वेबसाइट →</a>
-    </article>
-    <article class="card">
-      <div class="card-icon">▦</div><h3>EMI Calculator</h3>
-      <p>लोन राशि, ब्याज और अवधि के आधार पर अनुमानित मासिक किस्त निकालें।</p>
-      <a href="#emi">EMI निकालें →</a>
-    </article>
-    <article class="card">
-      <div class="card-icon">✆</div><h3>WhatsApp सहायता</h3>
-      <p>वित्तीय जानकारी या सहायता के लिए WhatsApp पर संदेश भेजें।</p>
-      <a href="https://wa.me/918418802885" target="_blank" rel="noopener">WhatsApp खोलें →</a>
-    </article>
-  </div>
-</section>
-
-<section class="wrap" id="emi">
-  <div class="section-title">
-    <h2>EMI Calculator</h2>
-    <p>अपनी अनुमानित मासिक किस्त जानें</p>
-  </div>
-  <div class="two-col">
-    <div class="card">
-      <label for="amount">लोन राशि (₹)</label>
-      <input id="amount" type="number" min="1" value="100000">
-      <label for="rate">सालाना ब्याज दर (%)</label>
-      <input id="rate" type="number" min="0" step="0.1" value="12">
-      <label for="months">लोन अवधि (महीने)</label>
-      <input id="months" type="number" min="1" max="600" value="12">
-      <button class="btn btn-green" id="calc" type="button">EMI निकालें</button>
-    </div>
-    <div class="card">
-      <h3>आपकी अनुमानित EMI</h3>
-      <div class="result">
-        <div>मासिक किस्त</div>
-        <strong id="emi-result">₹8,884.88</strong>
-        <p id="total-result">कुल भुगतान: ₹1,06,618.56</p>
-      </div>
-      <p class="note">यह केवल अनुमान है। वास्तविक EMI में शुल्क, बीमा, ब्याज की गणना और ऋणदाता की शर्तों के कारण अंतर हो सकता है।</p>
-    </div>
-  </div>
-</section>
-
-<section class="wrap" id="apply">
-  <div class="section-title">
-    <h2>अपनी ज़रूरत बताएँ</h2>
-    <p>जानकारी भरें; WhatsApp संदेश भेजने से पहले आप उसे देख सकेंगे।</p>
-  </div>
-  <div class="two-col">
-    <div class="card">
-      <form id="lead-form">
-        <div class="form-grid">
-          <div class="full">
-            <label for="fullname">आपका नाम *</label>
-            <input id="fullname" name="fullname" required maxlength="80" placeholder="पूरा नाम">
-          </div>
-          <div class="full">
-            <label for="phone">मोबाइल नंबर *</label>
-            <input id="phone" name="phone" required inputmode="numeric"
-             pattern="[6-9][0-9]{9}" maxlength="10" placeholder="10 अंकों का मोबाइल नंबर">
-          </div>
-          <div class="full">
-            <label for="product">आपको किस सेवा की जानकारी चाहिए? *</label>
-            <select id="product" name="product" required>
-              <option value="">सेवा चुनें</option>
-              <option>Personal Loan</option>
-              <option>Business Loan</option>
-              <option>Credit Card</option>
-              <option>CIBIL सहायता</option>
-              <option>अन्य जानकारी</option>
-            </select>
-          </div>
-          <div class="full">
-            <label for="city">शहर (वैकल्पिक)</label>
-            <input id="city" name="city" maxlength="80" placeholder="आपका शहर">
-          </div>
-          <div class="full">
-            <label style="font-weight:400">
-              <input id="consent" type="checkbox" required style="width:auto">
-              मैं सहमत हूँ कि मेरी दी गई जानकारी का उपयोग मेरे अनुरोध का जवाब देने के लिए किया जाए।
-            </label>
-          </div>
-          <div class="full">
-            <button class="btn btn-green" type="submit">WhatsApp पर अनुरोध भेजें</button>
-          </div>
-        </div>
-      </form>
-      <p class="note">इस फॉर्म में PAN, Aadhaar, OTP, बैंक पासवर्ड या कार्ड विवरण न भरें। संदेश WhatsApp में खुलेगा; आपको खुद Send दबाना होगा।</p>
-      <p id="form-status" role="status"></p>
-    </div>
-    <div class="card">
-      <div class="card-icon">✦</div>
-      <h3>सुरक्षित और स्पष्ट जानकारी</h3>
-      <p>हम लोन की मंजूरी या किसी निश्चित ब्याज दर की गारंटी नहीं देते। पात्रता और अंतिम निर्णय संबंधित बैंक या वित्तीय संस्था का होता है।</p>
-      <hr>
-      <h3>सीधे संपर्क करें</h3>
-      <p>WhatsApp: 8418802885</p>
-      <a class="btn" href="https://wa.me/918418802885" target="_blank" rel="noopener">संदेश भेजें</a>
-    </div>
-  </div>
-</section>
-
-<section class="wrap" id="admin">
-  <div class="section-title">
-    <h2>Admin Dashboard</h2>
-    <p>यह शुरुआती डेमो है, सुरक्षित ऑनलाइन डेटाबेस नहीं।</p>
-  </div>
-  <div class="card">
-    <p>डेमो एडमिन स्क्रीन खोलने के लिए PIN दर्ज करें।</p>
-    <label for="admin-pin">Admin PIN</label>
-    <input id="admin-pin" type="password" inputmode="numeric" placeholder="डेमो PIN">
-    <button class="btn btn-green" id="admin-login" type="button">Dashboard खोलें</button>
-    <div class="admin-area" id="admin-area">
-      <h3>इस ब्राउज़र में सेव हुए डेमो रिकॉर्ड</h3>
-      <p class="note">डेमो PIN: 2468. सार्वजनिक वेबसाइट पर यह सुरक्षित प्रमाणीकरण नहीं है।</p>
-      <button class="btn btn-green" id="export-leads" type="button">CSV डाउनलोड करें</button>
-      <button class="btn" id="clear-leads" type="button">इस ब्राउज़र का डेटा हटाएँ</button>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>नाम</th><th>सेवा</th><th>शहर</th><th>समय</th></tr></thead>
-          <tbody id="lead-rows"><tr><td colspan="4">कोई डेमो रिकॉर्ड नहीं।</td></tr></tbody>
-        </table>
-      </div>
-    </div>
-  </div>
+</div>
 </section>
 </main>
 
 <footer>
 <div class="footer-inner">
-  <a class="brand" href="#">
-    <span class="logo">GR</span>
-    <span class="brand-name">GREEN RALD<small>FINANCE</small></span>
-  </a>
-  <p>वित्तीय जानकारी का एक सरल माध्यम।</p>
-  <p class="note" style="color:#d7e4dc">GREEN RALD FINANCE स्वयं बैंक या ऋणदाता होने का दावा नहीं करता। वित्तीय उत्पादों की उपलब्धता, पात्रता, ब्याज दर और मंजूरी संबंधित संस्था पर निर्भर है।</p>
-  <a href="https://www.cibil.com/" target="_blank" rel="noopener">आधिकारिक CIBIL वेबसाइट</a>
-  <p class="note" style="color:#d7e4dc">© <span id="year"></span> GREEN RALD FINANCE</p>
+<div><a class="brand" href="#home"><svg viewBox="0 0 100 100" aria-label="GR logo"><rect x="2" y="2" width="96" height="96" rx="25" fill="#08734b"/><text x="50" y="69" text-anchor="middle" font-size="48" font-weight="900" font-family="Arial" fill="#dfbd61">GR</text></svg><span class="brand-name" style="color:white">GREEN RALD<br>FINANCE<small style="color:#dfbd61">PLAN · GROW · PROSPER</small></span></a><p>Clear information for your financial journey.</p></div>
+<div><h3>Quick Links</h3><p><a href="#home">Home</a></p><p><a href="#personal">Personal Loans</a></p><p><a href="#loans">All Loans</a></p><p><a href="#services">Accounts & Services</a></p><p><a href="#calculator">EMI Calculator</a></p></div>
+<div><h3>Contact</h3><p>WhatsApp: +91 84188 02885</p><p><a href="#contact">Send an Enquiry</a></p><p><a href="https://www.cibil.com/" target="_blank" rel="noopener noreferrer">Official CIBIL Website</a></p></div>
 </div>
+<div class="footer-bottom">Disclaimer: Green Rald Finance is not a bank or lender and does not guarantee loan approval, rates or disbursal. Terms, eligibility and approval depend on the relevant institution. © <span id="year"></span> Green Rald Finance. All rights reserved.</div>
 </footer>
 
 <script>
-const $ = id => document.getElementById(id);
-$("year").textContent = new Date().getFullYear();
+function money(n){
+return new Intl.NumberFormat('en-IN',{style:'currency',currency:'INR',maximumFractionDigits:0}).format(n);
+}
 
 function calculateEMI(){
-  const p = Number($("amount").value);
-  const annual = Number($("rate").value);
-  const n = Number($("months").value);
-  if(!Number.isFinite(p)||!Number.isFinite(annual)||!Number.isFinite(n)||
-     p<=0||annual<0||n<1||n>600||!Number.isInteger(n)){
-    $("emi-result").textContent="सही जानकारी भरें";
-    $("total-result").textContent="";
-    return;
-  }
-  const r=annual/1200;
-  const emi=r===0?p/n:p*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);
-  $("emi-result").textContent="₹"+emi.toLocaleString("en-IN",{maximumFractionDigits:2,minimumFractionDigits:2});
-  $("total-result").textContent="कुल भुगतान: ₹"+(emi*n).toLocaleString("en-IN",{maximumFractionDigits:2,minimumFractionDigits:2});
+const p=Number(document.getElementById('amount').value);
+const annualRate=Number(document.getElementById('rate').value);
+const y=Number(document.getElementById('years').value);
+
+if(!Number.isFinite(p)||!Number.isFinite(annualRate)||!Number.isFinite(y)||
+p<1000||p>1000000000||annualRate<0||annualRate>60||y<1||y>40){
+alert('Please enter a valid loan amount, annual interest rate (0–60%) and term (1–40 years).');
+return;
 }
-$("calc").addEventListener("click",calculateEMI);
+
+const r=annualRate/1200;
+const n=Math.round(y*12);
+const emi=r===0?p/n:p*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);
+const total=emi*n;
+
+document.getElementById('emi').textContent=money(emi);
+document.getElementById('total').textContent=money(total);
+document.getElementById('interest').textContent=money(total-p);
+}
+
+document.getElementById('calcBtn').addEventListener('click',calculateEMI);
+document.getElementById('year').textContent=new Date().getFullYear();
+
+document.querySelectorAll('[data-service]').forEach(function(link){
+link.addEventListener('click',function(){
+document.getElementById('service').value=this.getAttribute('data-service');
+});
+});
+
+document.getElementById('contactForm').addEventListener('submit',function(e){
+e.preventDefault();
+
+const name=document.getElementById('name').value.trim();
+const phone=document.getElementById('phone').value.trim();
+const service=document.getElementById('service').value;
+const message=document.getElementById('message').value.trim();
+
+if(!name||!phone||!service){
+alert('Please complete the required fields.');
+return;
+}
+
+const body='Hello Green Rald Finance, I would like information about a service.\nName: '+name+'\nContact: '+phone+'\nService: '+service+'\nMessage: '+message;
+const whatsappURL='https://wa.me/918418802885?text='+encodeURIComponent(body);
+window.open(whatsappURL,'_blank','noopener');
+});
+
 calculateEMI();
-
-document.querySelectorAll("[data-product]").forEach(link=>{
-  link.addEventListener("click",()=>{$("product").value=link.dataset.product;});
-});
-
-$("lead-form").addEventListener("submit",event=>{
-  event.preventDefault();
-  if(!$("lead-form").reportValidity()) return;
-  const name=$("fullname").value.trim();
-  const phone=$("phone").value.trim();
-  const product=$("product").value;
-  const city=$("city").value.trim();
-  const message=[
-    "GREEN RALD FINANCE - जानकारी अनुरोध",
-    "नाम: "+name,
-    "मोबाइल: "+phone,
-    "सेवा: "+product,
-    "शहर: "+(city||"नहीं बताया"),
-    "मैं अपनी जानकारी के संबंध में संपर्क चाहता/चाहती हूँ।"
-  ].join("\n");
-  $("form-status").textContent="WhatsApp खुलने पर संदेश जाँचें और खुद Send दबाएँ।";
-  window.open("https://wa.me/918418802885?text="+encodeURIComponent(message),"_blank","noopener");
-});
-
-function getDemoLeads(){
-  try{return JSON.parse(localStorage.getItem("grf_demo_leads")||"[]");}
-  catch(e){return [];}
-}
-function renderLeads(){
-  const leads=getDemoLeads();
-  const tbody=$("lead-rows");
-  tbody.replaceChildren();
-  if(!leads.length){
-    const tr=document.createElement("tr"),td=document.createElement("td");
-    td.colSpan=4;td.textContent="इस ब्राउज़र में कोई डेमो रिकॉर्ड नहीं।";
-    tr.appendChild(td);tbody.appendChild(tr);return;
-  }
-  leads.forEach(lead=>{
-    const tr=document.createElement("tr");
-    [lead.name,lead.product,lead.city,lead.time].forEach(value=>{
-      const td=document.createElement("td");td.textContent=value||"-";tr.appendChild(td);
-    });
-    tbody.appendChild(tr);
-  });
-}
-$("admin-login").addEventListener("click",()=>{
-  if($("admin-pin").value==="2468"){
-    $("admin-area").style.display="block";renderLeads();
-  }else{
-    alert("गलत PIN। डेमो PIN 2468 है।");
-  }
-});
-$("clear-leads").addEventListener("click",()=>{
-  if(confirm("क्या इस ब्राउज़र का डेमो डेटा हटाना चाहते हैं?")){
-
+</script>
+</body>
+</html>
