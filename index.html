@@ -554,17 +554,4 @@ $("admin-login").addEventListener("click",()=>{
 });
 $("clear-leads").addEventListener("click",()=>{
   if(confirm("क्या इस ब्राउज़र का डेमो डेटा हटाना चाहते हैं?")){
-    localStorage.removeItem("grf_demo_leads");renderLeads();
-  }
-});
-$("export-leads").addEventListener("click",()=>{
-  const leads=getDemoLeads();
-  const csv=[["नाम","सेवा","शहर","समय"],...leads.map(x=>[x.name,x.product,x.city,x.time])]
-    .map(row=>row.map(v=>'"'+String(v||"").replace(/"/g,'""')+'"').join(",")).join("\r\n");
-  const url=URL.createObjectURL(new Blob(["\uFEFF"+csv],{type:"text/csv;charset=utf-8"}));
-  const a=document.createElement("a");a.href=url;a.download="green-rald-demo-leads.csv";a.click();
-  URL.revokeObjectURL(url);
-});
-</script>
-</body>
-</html> 
+
