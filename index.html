@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GREEN RALD FINANCE</title>
+<style>
+body{font-family:Arial,sans-serif;margin:0;background:#f2f7f3;color:#183b2a}
+header{background:#126b3a;color:white;padding:25px 16px;text-align:center}
+main{max-width:650px;margin:20px auto;padding:16px}
+section{background:white;padding:18px;margin:14px 0;border-radius:12px}
+a,button{background:#147a43;color:white;padding:12px;border:0;border-radius:7px;text-decoration:none;display:inline-block}
+input{box-sizing:border-box;width:100%;padding:12px;margin:8px 0}
+</style>
+</head>
+<body>
+<header>
+<h1>GREEN RALD FINANCE</h1>
+<p>आपकी वित्तीय जानकारी और सहायता</p>
+</header>
+<main>
+<section>
+<h2>हमारी सेवाएँ</h2>
+<p>Personal Loan जानकारी</p>
+<p>Business Loan जानकारी</p>
+<p>Credit Card जानकारी</p>
+<p>CIBIL Score सहायता</p>
+<a href="https://www.cibil.com/">आधिकारिक CIBIL वेबसाइट</a>
+</section>
+<section>
+<h2>EMI Calculator</h2>
+<label>लोन राशि (₹)</label>
+<input id="amount" type="number" placeholder="जैसे 100000">
+<label>सालाना ब्याज (%)</label>
+<input id="rate" type="number" value="12">
+<label>अवधि (महीने)</label>
+<input id="months" type="number" value="12">
+<button onclick="calc()">EMI निकालें</button>
+<p id="result"></p>
+</section>
+<section>
+<h2>WhatsApp सहायता</h2>
+<p>वित्तीय जानकारी के लिए संपर्क करें।</p>
+<a href="https://wa.me/918418802885">WhatsApp पर संपर्क करें</a>
+</section>
+<p>लोन की मंजूरी संबंधित बैंक या वित्तीय संस्था के नियमों पर निर्भर करती है।</p>
+</main>
+<script>
+function calc(){
+let p=Number(document.getElementById('amount').value);
+let r=Number(document.getElementById('rate').value)/1200;
+let n=Number(document.getElementById('months').value);
+if(p<=0||n<=0||r<0){
+document.getElementById('result').textContent='सही जानकारी भरें।';
+return;
+}
+let emi=r===0?p/n:p*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);
+document.getElementById('result').textContent='अनुमानित मासिक EMI: ₹'+emi.toFixed(2);
+}
+</script>
+</body>
+</html>
