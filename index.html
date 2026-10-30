@@ -1,431 +1,487 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#071b12">
-<title>GREEN RALD FINANCE | Your Financial Partner</title>
-<meta name="description" content="Explore bank accounts, Demat accounts, credit cards, loans and financial tools at GREEN RALD FINANCE.">
-
+<meta name="theme-color" content="#0c2419">
+<meta name="description" content="GREEN RALD FINANCE – banking, demat, credit cards, loans and financial tools.">
+<title>GREEN RALD FINANCE | Smart Finance, Simple Choices</title>
 <style>
-:root{
- --bg:#06170f;
- --bg2:#0b2418;
- --card:#102c1e;
- --card2:#153a28;
- --green:#22c477;
- --gold:#e5c36b;
- --white:#f5f8f5;
- --muted:#b8cabe;
- --border:#294b37;
-}
-*{margin:0;padding:0;box-sizing:border-box}
+:root{--green:#103b2b;--green2:#18583e;--lime:#b9dc78;--gold:#d7b66b;--ink:#18251f;--muted:#68766e;--paper:#f5f7f2;--white:#fff;--line:#e4e9e1;--shadow:0 18px 50px rgba(17,49,34,.09)}
+*{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
- font-family:Arial,Helvetica,sans-serif;
- background:var(--bg);color:var(--white);line-height:1.6;
-}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+button,a{font:inherit}
 a{text-decoration:none;color:inherit}
-button,input{font:inherit}
-.container{width:min(1160px,92%);margin:auto}
-header{
- position:sticky;top:0;z-index:100;
- background:#06170ff2;backdrop-filter:blur(12px);
- border-bottom:1px solid var(--border);
-}
-.nav{
- min-height:76px;display:flex;align-items:center;
- justify-content:space-between;gap:20px;
-}
-.brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:1px}
-.logo{
- width:46px;height:46px;border-radius:14px;
- display:grid;place-items:center;
- color:#062516;font-weight:1000;font-size:20px;
- background:linear-gradient(140deg,var(--green),#087c4b);
- border:2px solid var(--gold);flex-shrink:0;
-}
-.brand small{display:block;color:var(--gold);font-size:9px;letter-spacing:2px}
-nav{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
-nav a{font-size:12px;color:var(--muted)}
-nav a:hover{color:var(--green)}
-.menu-btn{display:none;background:none;color:white;border:1px solid var(--border);padding:8px 12px;border-radius:8px}
-.hero{
- padding:78px 0 65px;
- background:radial-gradient(ellipse at 85% 10%,#1b6944 0,transparent 40%),
- linear-gradient(120deg,#06170f,#0d3020);
-}
-.hero-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:35px;align-items:center}
-.eyebrow{color:var(--gold);font-size:12px;font-weight:bold;letter-spacing:2px}
-h1{font-size:clamp(38px,6vw,66px);line-height:1.08;margin:15px 0}
-h1 span{color:var(--green)}
-.hero p{color:var(--muted);max-width:610px;font-size:15px}
-.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
-.btn{
- display:inline-flex;justify-content:center;align-items:center;
- padding:11px 18px;border-radius:9px;font-weight:bold;
- font-size:13px;border:1px solid transparent;cursor:pointer;
- transition:.2s;
-}
-.btn:hover{transform:translateY(-2px)}
-.btn-green{background:var(--green);color:#052416}
-.btn-outline{border-color:var(--gold);color:var(--gold)}
-.hero-card{
- padding:26px;border-radius:22px;
- background:#ffffff0c;border:1px solid #ffffff25;
-}
-.hero-card .logo{width:65px;height:65px;font-size:26px;margin-bottom:16px}
-.hero-card h2{font-size:21px;margin-bottom:8px}
-.hero-card p{font-size:13px}
-.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
-.stat{background:#ffffff0b;padding:12px;border-radius:10px;color:var(--muted);font-size:12px}
-.stat strong{display:block;color:var(--green);font-size:21px}
-section{padding:65px 0}
-.section-heading{text-align:center;margin-bottom:30px}
-.section-heading h2{font-size:clamp(26px,4vw,36px);margin-top:7px}
-.section-heading p{color:var(--muted);font-size:13px;margin-top:8px}
-.category-section{background:#0a2116}
-.category-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
-.category{
- display:block;padding:21px 15px;text-align:center;
- background:linear-gradient(145deg,var(--card),#0b2117);
- border:1px solid var(--border);border-radius:15px;
- transition:.2s;
-}
-.category:hover{transform:translateY(-4px);border-color:var(--green)}
-.category .emoji{font-size:29px;display:block;margin-bottom:8px}
-.category h3{font-size:14px}
-.category p{font-size:11px;color:var(--muted);margin-top:5px}
-.section-title-row{
- display:flex;justify-content:space-between;align-items:center;
- gap:15px;margin-bottom:23px;flex-wrap:wrap;
-}
-.section-title-row h2{font-size:27px}
-.section-title-row p{font-size:12px;color:var(--muted)}
-.search{
- display:block;width:min(430px,100%);margin:0 auto 22px;
- padding:12px 15px;border-radius:10px;
- border:1px solid var(--border);background:var(--card);
- color:white;outline:none;
-}
-.search:focus{border-color:var(--green)}
-.filters{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:24px}
-.filter{
- border:1px solid var(--border);background:var(--card);
- color:var(--muted);padding:8px 14px;border-radius:30px;
- cursor:pointer;font-size:12px;
-}
-.filter.active,.filter:hover{background:var(--green);color:#062416;border-color:var(--green)}
-.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
-.product-card{
- background:linear-gradient(145deg,var(--card),#0a2117);
- border:1px solid var(--border);border-radius:16px;
- padding:19px;display:flex;flex-direction:column;
- min-height:205px;transition:.2s;
-}
-.product-card:hover{border-color:var(--green);transform:translateY(-3px)}
-.card-top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:13px}
-.stamp{font-size:10px;color:var(--gold);letter-spacing:1px;font-weight:bold}
-.tag{font-size:10px;color:var(--green);background:#1c5035;padding:4px 8px;border-radius:20px}
-.product-card h3{font-size:16px;line-height:1.4;margin-bottom:8px}
-.product-card p{font-size:12px;color:var(--muted);margin-bottom:17px}
-.product-card .btn{width:100%;margin-top:auto}
-.empty{grid-column:1/-1;text-align:center;padding:30px;color:var(--muted)}
-.loan-section{background:#0a2116}
-.loan-card{min-height:190px}
-.loan-card .emoji{font-size:26px;margin-bottom:8px}
-.tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
-.tool-card{padding:22px;border:1px solid var(--border);background:var(--card);border-radius:15px}
-.tool-card .emoji{font-size:28px}
-.tool-card h3{margin:8px 0}
-.tool-card p{font-size:12px;color:var(--muted);margin-bottom:15px}
-.calculator{max-width:650px;margin:auto;padding:25px;background:var(--card);border:1px solid var(--border);border-radius:18px}
-.field{margin:15px 0}
-.field label{display:block;color:var(--muted);font-size:13px;margin-bottom:6px}
-.field input{width:100%;padding:12px;background:var(--bg);border:1px solid var(--border);border-radius:9px;color:white}
-.result{margin-top:18px;padding:17px;background:#0a3b27;border:1px solid #20734b;border-radius:12px}
-.result strong{display:block;color:var(--gold);font-size:25px}
-.contact-box{
- max-width:720px;margin:auto;text-align:center;padding:35px 22px;
- border:1px solid var(--border);border-radius:20px;
- background:linear-gradient(145deg,var(--card),#0b2118);
-}
-.contact-box p{color:var(--muted);margin:10px 0 20px}
-footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted);font-size:12px}
-.footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-footer strong{color:var(--gold)}
-.disclaimer{margin-top:16px;line-height:1.8}
-.whatsapp-float{
- position:fixed;right:18px;bottom:18px;z-index:90;
- background:#20c477;color:#062416;font-weight:bold;
- padding:12px 17px;border-radius:40px;box-shadow:0 5px 22px #0008;
-}
+.topbar{background:#0a2118;color:#e9f0e9;font-size:12px;padding:9px 5%;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.topbar a{color:var(--lime)}
+header{background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20;backdrop-filter:blur(12px)}
+.navwrap{max-width:1200px;margin:auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:850;letter-spacing:.5px;color:var(--green)}
+.logo{width:43px;height:43px;border-radius:14px;background:linear-gradient(145deg,#174b35,#0b291d);display:grid;place-items:center;color:var(--lime);font-weight:900;font-size:16px;border:1px solid #d3b66c;box-shadow:0 5px 14px #103b2b22}
+.brand small{display:block;font-size:9px;letter-spacing:2.2px;color:#8a988f;font-weight:700;margin-top:2px}
+.navlinks{display:flex;align-items:center;gap:5px}
+.navlinks button,.menu-toggle{border:0;background:transparent;color:#425148;padding:10px 12px;border-radius:10px;font-weight:650;font-size:13px;cursor:pointer}
+.navlinks button:hover,.navlinks button.active{background:#edf4e9;color:var(--green)}
+.navlinks .contact-nav{background:var(--green);color:white;padding:11px 17px}
+.menu-toggle{display:none;font-size:22px}
+.container{max-width:1160px;margin:auto;padding:0 24px}
+.hero{background:radial-gradient(circle at 85% 20%,#2d6749 0,transparent 30%),linear-gradient(120deg,#0b281c,#164632 70%,#1d513a);color:#fff;padding:74px 0 68px;overflow:hidden;position:relative}
+.hero:after{content:"GR";position:absolute;right:7%;bottom:-90px;font-size:330px;line-height:1;font-weight:900;color:#ffffff08;pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:45px;align-items:center;position:relative;z-index:1}
+.eyebrow{color:var(--lime);font-size:11px;letter-spacing:2.5px;font-weight:800;text-transform:uppercase}
+.hero h1{font-size:clamp(36px,5vw,58px);line-height:1.06;letter-spacing:-1.8px;margin:16px 0}
+.hero h1 span{color:var(--lime)}
+.hero p{color:#d1dfd5;max-width:590px;line-height:1.75;font-size:15px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:27px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 19px;border-radius:11px;font-size:13px;font-weight:800;border:1px solid transparent;cursor:pointer;transition:.2s}
+.btn-primary{background:var(--lime);color:#153522}
+.btn-primary:hover{background:#cce995;transform:translateY(-2px)}
+.btn-outline{border-color:#ffffff60;color:#fff;background:#ffffff0c}
+.btn-outline:hover{background:#ffffff1b}
+.hero-card{background:#ffffff12;border:1px solid #ffffff25;border-radius:22px;padding:25px;backdrop-filter:blur(8px);box-shadow:0 20px 60px #06180f40}
+.hero-card .mini{font-size:10px;letter-spacing:2px;color:var(--lime);font-weight:800}
+.hero-card h3{font-size:21px;margin:12px 0}
+.hero-card p{font-size:13px;margin:0 0 17px}
+.quicklinks{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.quicklinks button{border:1px solid #ffffff30;background:#ffffff10;color:white;border-radius:10px;padding:12px;text-align:left;font-size:12px;font-weight:700;cursor:pointer}
+.quicklinks button:hover{background:#ffffff22}
+.truststrip{background:#fff;border-bottom:1px solid var(--line)}
+.trustinner{max-width:1160px;margin:auto;padding:17px 24px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;color:#59675f;font-size:12px;font-weight:650}
+.trustinner span{display:flex;align-items:center;gap:8px}
+.dot{width:7px;height:7px;background:#8ab65e;border-radius:50%}
+.section{padding:65px 0}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:25px}
+.kicker{font-size:10px;letter-spacing:2.2px;color:#72905e;font-weight:850;text-transform:uppercase}
+.section h2{font-size:clamp(25px,3vw,35px);letter-spacing:-.8px;color:var(--green);margin:8px 0 0}
+.section-head p{margin:0;color:var(--muted);font-size:13px;max-width:430px;line-height:1.6}
+.category-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.category{background:#fff;border:1px solid var(--line);border-radius:16px;padding:21px;text-align:left;cursor:pointer;min-height:145px;transition:.2s;box-shadow:0 4px 14px #183d2810}
+.category:hover{transform:translateY(-4px);border-color:#b9d39d;box-shadow:var(--shadow)}
+.cat-icon{width:42px;height:42px;border-radius:13px;background:#edf4e8;display:grid;place-items:center;font-size:20px;margin-bottom:15px}
+.category strong{display:block;color:var(--green);font-size:14px}
+.category small{display:block;color:#839087;font-size:11px;margin-top:5px}
+.category .arrow{float:right;color:#8da57b;font-size:19px}
+.page-view{display:none;min-height:52vh;padding:42px 0 75px}
+.page-view.show{display:block}
+.page-title{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:25px;flex-wrap:wrap}
+.back-btn{border:1px solid var(--line);background:white;color:var(--green);border-radius:10px;padding:10px 14px;font-weight:750;cursor:pointer}
+.page-title h2{font-size:30px;color:var(--green);margin:0}
+.page-title p{color:var(--muted);font-size:13px;margin:7px 0 0}
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.product-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;display:flex;flex-direction:column;min-height:190px;box-shadow:0 5px 18px #173b2709}
+.product-card .tag{font-size:9px;text-transform:uppercase;letter-spacing:1.4px;color:#799264;font-weight:850}
+.product-card h3{font-size:16px;line-height:1.35;color:var(--green);margin:10px 0 8px}
+.product-card p{font-size:12px;line-height:1.55;color:var(--muted);margin:0 0 18px}
+.product-card .btn{margin-top:auto;width:100%;padding:12px}
+.apply{background:var(--green);color:#fff}
+.apply:hover{background:#1c6244;transform:translateY(-1px)}
+.secondary{background:#edf4e9;color:var(--green)}
+.note{background:#fff8e8;border:1px solid #f0e2bd;border-radius:12px;padding:14px 16px;color:#6d5a2e;font-size:12px;line-height:1.6;margin:0 0 20px}
+.calculator{max-width:720px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:var(--shadow)}
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.field label{display:block;font-size:12px;font-weight:750;color:#53645a;margin-bottom:8px}
+.field input{width:100%;accent-color:var(--green)}
+.field output{display:block;font-size:19px;font-weight:850;color:var(--green);margin-top:6px}
+.result{margin-top:22px;padding:20px;background:#eff5e9;border-radius:13px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.result small{font-size:10px;color:#72816f;display:block}
+.result strong{font-size:18px;color:var(--green);display:block;margin-top:5px}
+.contact-panel{background:#103b2b;color:white;border-radius:20px;padding:30px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.contact-panel h3{font-size:24px;margin:0 0 8px}
+.contact-panel p{font-size:13px;color:#d0dfd4;margin:0}
+.footer{background:#091f16;color:#c9d7ce;padding:38px 0 22px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px}
+.footer p,.footer a{font-size:12px;color:#aabbb0;line-height:1.8}
+.footer h4{color:#fff;font-size:13px;margin:0 0 12px}
+.footer-links{display:grid;gap:7px}
+.copyright{border-top:1px solid #ffffff1b;margin-top:27px;padding-top:17px;font-size:10px;color:#8fa197}
+.disclaimer{font-size:10px;color:#91a399;line-height:1.6;margin-top:10px}
+.hidden{display:none!important}
 @media(max-width:850px){
- .hero-grid{grid-template-columns:1fr}
- .category-grid{grid-template-columns:repeat(3,1fr)}
- .product-grid,.tools-grid{grid-template-columns:repeat(2,1fr)}
- nav{gap:10px}
+.navlinks{display:none;position:absolute;left:0;right:0;top:71px;background:white;padding:12px 20px 18px;border-bottom:1px solid var(--line);box-shadow:0 15px 25px #122d1b12;flex-direction:column;align-items:stretch}
+.navlinks.open{display:flex}
+.navlinks button{text-align:left}
+.menu-toggle{display:block}
+.hero-grid{grid-template-columns:1fr}
+.hero-card{max-width:520px}
+.category-grid{grid-template-columns:repeat(2,1fr)}
+.product-grid{grid-template-columns:repeat(2,1fr)}
 }
-@media(max-width:600px){
- .nav{padding:12px 0;flex-wrap:wrap}
- .menu-btn{display:block;margin-left:auto}
- nav{display:none;width:100%;padding:12px 0}
- nav.show{display:flex}
- nav a{width:45%;padding:5px}
- .hero{padding:50px 0}
- section{padding:48px 0}
- .category-grid{grid-template-columns:repeat(2,1fr);gap:10px}
- .product-grid,.tools-grid{grid-template-columns:1fr}
- .section-title-row h2{font-size:23px}
+@media(max-width:560px){
+.container{padding:0 17px}
+.navwrap{padding:12px 17px}
+.brand{font-size:13px}
+.hero{padding:54px 0}
+.hero h1{font-size:39px}
+.hero-card{padding:20px}
+.section{padding:48px 0}
+.section-head{display:block}
+.section-head p{margin-top:10px}
+.category-grid{gap:10px}
+.category{padding:15px;min-height:135px}
+.product-grid{grid-template-columns:1fr}
+.page-view{padding:28px 0 55px}
+.page-title h2{font-size:25px}
+.calc-grid{grid-template-columns:1fr}
+.result{grid-template-columns:1fr}
+.footer-grid{grid-template-columns:1fr;gap:22px}
+.trustinner{padding:14px 17px}
+.hero:after{font-size:190px;right:-10px}
 }
 </style>
 </head>
-
 <body>
 
+<div class="topbar">
+<span>SMART FINANCE · SIMPLE CHOICES</span>
+<span>Need help? <a href="https://wa.me/918418802885" target="_self">WhatsApp +91 84188 02885</a></span>
+</div>
+
 <header>
- <div class="container nav">
-  <a href="#home" class="brand">
-   <span class="logo">GR</span>
-   <span>GREEN RALD FINANCE<small>SMART FINANCIAL CHOICES</small></span>
-  </a>
-  <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰ Menu</button>
-  <nav id="mainNav">
-   <a href="#home">Home</a>
-   <a href="#categories">All Services</a>
-   <a href="#accounts">Bank Account</a>
-   <a href="#demat">Demat</a>
-   <a href="#credit">Credit Cards</a>
-   <a href="#loans">Loans</a>
-   <a href="#contact">Contact</a>
-  </nav>
- </div>
+<div class="navwrap">
+<a class="brand" href="#home" onclick="showHome()">
+<span class="logo">GR</span>
+<span>GREEN RALD FINANCE<small>YOUR FINANCE, SIMPLIFIED</small></span>
+</a>
+<button class="menu-toggle" aria-label="Open menu" onclick="toggleMenu()">☰</button>
+<nav class="navlinks" id="navlinks">
+<button onclick="showHome()">Home</button>
+<button onclick="openPage('accounts')">Bank Accounts</button>
+<button onclick="openPage('demat')">Demat</button>
+<button onclick="openPage('cards')">Credit Cards</button>
+<button onclick="openPage('loans')">Loans</button>
+<button onclick="openPage('tools')">Financial Tools</button>
+<button class="contact-nav" onclick="openPage('contact')">Contact Us</button>
+</nav>
+</div>
 </header>
 
-<main>
-<section class="hero" id="home">
- <div class="container hero-grid">
-  <div>
-   <div class="eyebrow">WELCOME TO GREEN RALD FINANCE</div>
-   <h1>Your Finance.<br><span>Your Future.</span></h1>
-   <p>Explore banking, credit cards, Demat accounts, loan options and useful financial tools — all in one place.</p>
-   <div class="actions">
-    <a class="btn btn-green" href="#categories">Explore All Services</a>
-    <a class="btn btn-outline" href="#contact">Contact Us</a>
-   </div>
-  </div>
-  <div class="hero-card">
-   <div class="logo">GR</div>
-   <h2>GREEN RALD FINANCE</h2>
-   <p>Your single destination to explore financial products and application options.</p>
-   <div class="stats">
-    <div class="stat"><strong>06</strong>Bank Accounts</div>
-    <div class="stat"><strong>03</strong>Demat Options</div>
-    <div class="stat"><strong>22</strong>Credit Cards</div>
-    <div class="stat"><strong>06</strong>Loan Categories</div>
-   </div>
-  </div>
- </div>
+<main id="homeview">
+<section class="hero">
+<div class="container hero-grid">
+<div>
+<div class="eyebrow">WELCOME TO GREEN RALD FINANCE</div>
+<h1>Make smarter<br>money moves.<br><span>Grow with confidence.</span></h1>
+<p>Explore banking, Demat accounts, credit cards and loan assistance—all in one simple place. Choose a category to view options and continue to the provider's application page.</p>
+<div class="hero-actions">
+<button class="btn btn-primary" onclick="scrollToCategories()">Explore Services <span>→</span></button>
+<button class="btn btn-outline" onclick="openPage('contact')">Talk to Our Team</button>
+</div>
+</div>
+<div class="hero-card">
+<div class="mini">YOUR FINANCE STARTS HERE</div>
+<h3>What would you like to explore?</h3>
+<p>Choose a service and see the available options.</p>
+<div class="quicklinks">
+<button onclick="openPage('accounts')">🏦 Bank Account</button>
+<button onclick="openPage('demat')">📈 Demat Account</button>
+<button onclick="openPage('cards')">💳 Credit Cards</button>
+<button onclick="openPage('loans')">🤝 Loan Assistance</button>
+</div>
+</div>
+</div>
 </section>
 
-<!-- ALL SERVICE CATEGORIES -->
-<section class="category-section" id="categories">
- <div class="container">
-  <div class="section-heading">
-   <div class="eyebrow">OUR SERVICES</div>
-   <h2>Explore All Categories</h2>
-   <p>Choose a category to explore available products and services.</p>
-  </div>
-  <div class="category-grid">
-   <a class="category" href="#accounts"><span class="emoji">🏦</span><h3>Bank Account</h3><p>Open a savings account</p></a>
-   <a class="category" href="#demat"><span class="emoji">📈</span><h3>Demat Account</h3><p>Explore investment accounts</p></a>
-   <a class="category" href="#credit"><span class="emoji">💳</span><h3>Credit Cards</h3><p>Explore 22 card options</p></a>
-   <a class="category" href="#personal-loan"><span class="emoji">💰</span><h3>Personal Loan</h3><p>Enquire about personal loans</p></a>
-   <a class="category" href="#home-loan"><span class="emoji">🏠</span><h3>Home Loan</h3><p>Explore home financing</p></a>
-   <a class="category" href="#business-loan"><span class="emoji">🏢</span><h3>Business Loan</h3><p>Finance business needs</p></a>
-   <a class="category" href="#education-loan"><span class="emoji">🎓</span><h3>Education Loan</h3><p>Explore education finance</p></a>
-   <a class="category" href="#vehicle-loan"><span class="emoji">🚗</span><h3>Vehicle Loan</h3><p>Car and two-wheeler loans</p></a>
-   <a class="category" href="#gold-loan"><span class="emoji">🪙</span><h3>Gold Loan</h3><p>Enquire about gold loans</p></a>
-   <a class="category" href="#cibil"><span class="emoji">📊</span><h3>CIBIL Score</h3><p>Check your credit score</p></a>
-   <a class="category" href="#emi"><span class="emoji">🧮</span><h3>EMI Calculator</h3><p>Calculate estimated EMI</p></a>
-   <a class="category" href="#contact"><span class="emoji">📞</span><h3>Contact Us</h3><p>Get in touch with us</p></a>
-  </div>
- </div>
+<div class="truststrip">
+<div class="trustinner">
+<span><i class="dot"></i> Simple product discovery</span>
+<span><i class="dot"></i> Direct provider application links</span>
+<span><i class="dot"></i> Support on WhatsApp</span>
+<span><i class="dot"></i> Easy-to-use on mobile</span>
+</div>
+</div>
+
+<section class="section" id="categories">
+<div class="container">
+<div class="section-head">
+<div><div class="kicker">EXPLORE OUR SERVICES</div><h2>Choose a category</h2></div>
+<p>Each category opens its own page with separate options and a clear Apply Now button.</p>
+</div>
+<div class="category-grid">
+<button class="category" onclick="openPage('accounts')"><span class="arrow">↗</span><div class="cat-icon">🏦</div><strong>Bank Account</strong><small>Zero-balance & savings accounts</small></button>
+<button class="category" onclick="openPage('demat')"><span class="arrow">↗</span><div class="cat-icon">📊</div><strong>Demat Account</strong><small>Explore investment accounts</small></button>
+<button class="category" onclick="openPage('cards')"><span class="arrow">↗</span><div class="cat-icon">💳</div><strong>Credit Cards</strong><small>Compare card options</small></button>
+<button class="category" onclick="openPage('loans')"><span class="arrow">↗</span><div class="cat-icon">🤝</div><strong>All Loan Categories</strong><small>Personal, home, business & more</small></button>
+<button class="category" onclick="openPage('cibil')"><span class="arrow">↗</span><div class="cat-icon">🧾</div><strong>CIBIL Score</strong><small>Check your credit profile</small></button>
+<button class="category" onclick="openPage('emi')"><span class="arrow">↗</span><div class="cat-icon">🧮</div><strong>EMI Calculator</strong><small>Estimate your monthly EMI</small></button>
+<button class="category" onclick="openPage('tools')"><span class="arrow">↗</span><div class="cat-icon">✨</div><strong>Financial Tools</strong><small>Useful finance resources</small></button>
+<button class="category" onclick="openPage('contact')"><span class="arrow">↗</span><div class="cat-icon">☎️</div><strong>Contact Us</strong><small>Get help on WhatsApp</small></button>
+</div>
+</div>
 </section>
 
-<!-- BANK ACCOUNTS -->
-<section id="accounts">
- <div class="container">
-  <div class="section-title-row">
-   <div><div class="eyebrow">BANKING SERVICES</div><h2>🏦 Bank Account</h2><p>Explore account opening options.</p></div>
-  </div>
-  <div class="product-grid" id="accountGrid"></div>
- </div>
-</section>
-
-<!-- DEMAT -->
-<section class="category-section" id="demat">
- <div class="container">
-  <div class="section-title-row">
-   <div><div class="eyebrow">INVESTMENT SERVICES</div><h2>📈 Demat Account</h2><p>Explore available Demat account options.</p></div>
-  </div>
-  <div class="product-grid" id="dematGrid"></div>
- </div>
-</section>
-
-<!-- CREDIT CARDS -->
-<section id="credit">
- <div class="container">
-  <div class="section-title-row">
-   <div><div class="eyebrow">CARD SERVICES</div><h2>💳 Credit Cards</h2><p>Explore all 22 credit card options.</p></div>
-  </div>
-  <input class="search" type="search" id="cardSearch" placeholder="Search by card or bank name...">
-  <div class="filters">
-   <button class="filter active" data-filter="all">All Cards (22)</button>
-   <button class="filter" data-filter="bank">Bank Cards</button>
-   <button class="filter" data-filter="upi">UPI / RuPay</button>
-   <button class="filter" data-filter="other">Other Cards</button>
-  </div>
-  <div class="product-grid" id="creditGrid"></div>
-  <p style="text-align:center;color:var(--muted);font-size:12px;margin-top:18px">Approval and card benefits depend on the issuer's eligibility criteria and terms.</p>
- </div>
-</section>
-
-<!-- LOAN CATEGORIES -->
-<section class="loan-section" id="loans">
- <div class="container">
-  <div class="section-heading">
-   <div class="eyebrow">LOAN SERVICES</div>
-   <h2>Explore Loan Categories</h2>
-   <p>Send an enquiry to learn about available loan options.</p>
-  </div>
-  <div class="product-grid">
-   <article class="product-card loan-card" id="personal-loan">
-    <div class="emoji">💰</div><h3>Personal Loan</h3>
-    <p>Enquire about personal loan options for eligible applicants.</p>
-    <a class="btn btn-green loan-link" data-loan="Personal Loan">Enquire on WhatsApp</a>
-   </article>
-   <article class="product-card loan-card" id="home-loan">
-    <div class="emoji">🏠</div><h3>Home Loan</h3>
-    <p>Enquire about home purchase and home financing options.</p>
-    <a class="btn btn-green loan-link" data-loan="Home Loan">Enquire on WhatsApp</a>
-   </article>
-   <article class="product-card loan-card" id="business-loan">
-    <div class="emoji">🏢</div><h3>Business Loan</h3>
-    <p>Enquire about financing options for business needs.</p>
-    <a class="btn btn-green loan-link" data-loan="Business Loan">Enquire on WhatsApp</a>
-   </article>
-   <article class="product-card loan-card" id="education-loan">
-    <div class="emoji">🎓</div><h3>Education Loan</h3>
-    <p>Enquire about education financing options.</p>
-    <a class="btn btn-green loan-link" data-loan="Education Loan">Enquire on WhatsApp</a>
-   </article>
-   <article class="product-card loan-card" id="vehicle-loan">
-    <div class="emoji">🚗</div><h3>Vehicle Loan</h3>
-    <p>Enquire about car and two-wheeler financing options.</p>
-    <a class="btn btn-green loan-link" data-loan="Vehicle Loan">Enquire on WhatsApp</a>
-   </article>
-   <article class="product-card loan-card" id="gold-loan">
-    <div class="emoji">🪙</div><h3>Gold Loan</h3>
-    <p>Enquire about gold loan options and eligibility.</p>
-    <a class="btn btn-green loan-link" data-loan="Gold Loan">Enquire on WhatsApp</a>
-   </article>
-  </div>
- </div>
-</section>
-
-<!-- FINANCIAL TOOLS -->
-<section id="cibil">
- <div class="container">
-  <div class="section-heading">
-   <div class="eyebrow">FINANCIAL TOOLS</div>
-   <h2>Useful Financial Services</h2>
-   <p>Access helpful tools and official resources.</p>
-  </div>
-  <div class="tools-grid">
-   <article class="tool-card">
-    <div class="emoji">📊</div><h3>CIBIL Score</h3>
-    <p>Visit the official CIBIL website to check your credit score and report.</p>
-    <a class="btn btn-green" href="https://www.cibil.com/credit-score" target="_blank" rel="noopener noreferrer">Check CIBIL Score ↗</a>
-   </article>
-   <article class="tool-card">
-    <div class="emoji">🧮</div><h3>EMI Calculator</h3>
-    <p>Estimate your monthly loan installment using the calculator.</p>
-    <a class="btn btn-outline" href="#emi">Calculate EMI</a>
-   </article>
-   <article class="tool-card">
-    <div class="emoji">💬</div><h3>Customer Enquiry</h3>
-    <p>Contact GREEN RALD FINANCE for general product enquiries.</p>
-    <a class="btn btn-green" href="https://wa.me/918418802885" target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
-   </article>
-  </div>
- </div>
-</section>
-
-<section class="category-section" id="emi">
- <div class="container">
-  <div class="section-heading">
-   <div class="eyebrow">CALCULATOR</div>
-   <h2>EMI Calculator</h2>
-   <p>Calculate an estimated monthly loan EMI.</p>
-  </div>
-  <div class="calculator">
-   <div class="field"><label for="amount">Loan Amount (₹)</label><input id="amount" type="number" min="1" value="500000"></div>
-   <div class="field"><label for="rate">Annual Interest Rate (%)</label><input id="rate" type="number" min="0" step="0.1" value="10"></div>
-   <div class="field"><label for="tenure">Loan Tenure (Years)</label><input id="tenure" type="number" min="1" max="40" value="5"></div>
-   <button class="btn btn-green" id="calculate" type="button">Calculate EMI</button>
-   <div class="result" aria-live="polite">
-    <span>Estimated Monthly EMI</span>
-    <strong id="emiResult">₹10,624</strong>
-    <span id="totalResult">Total payment: ₹6,37,440</span><br>
-    <span id="interestResult">Total interest: ₹1,37,440</span>
-   </div>
-   <p style="font-size:11px;color:var(--muted);margin-top:12px">This calculator provides an estimate only. Actual payments may differ.</p>
-  </div>
- </div>
-</section>
-
-<section id="contact">
- <div class="container">
-  <div class="contact-box">
-   <div class="eyebrow">CONTACT US</div>
-   <h2 style="font-size:30px;margin-top:8px">GREEN RALD FINANCE</h2>
-   <p>For general enquiries about bank accounts, credit cards, Demat accounts and loans, contact us on WhatsApp.</p>
-   <a class="btn btn-green" href="https://wa.me/918418802885" target="_blank" rel="noopener noreferrer">WhatsApp: +91 84188 02885</a>
-  </div>
- </div>
+<section class="section" style="padding-top:0">
+<div class="container">
+<div class="contact-panel">
+<div><h3>Need help choosing an option?</h3><p>Message GREEN RALD FINANCE and we'll help you find the right section.</p></div>
+<a class="btn btn-primary" href="https://wa.me/918418802885" target="_self">Chat on WhatsApp →</a>
+</div>
+</div>
 </section>
 </main>
 
-<footer>
- <div class="container">
-  <div class="footer-row">
-   <div><strong>GREEN RALD FINANCE</strong><br>Smart Financial Choices</div>
-   <a href="#home">Back to Top ↑</a>
-  </div>
-  <div class="disclaimer">
-   <strong>Disclaimer:</strong> GREEN RALD FINANCE is an independent information and referral platform. It is not a bank, NBFC, lender, credit bureau or card issuer. Financial products are offered by their respective providers and are subject to eligibility, approval, fees and terms and conditions. We do not guarantee loan approval, credit card approval, credit limits, returns or financial outcomes. Please verify all details on the provider's official website before applying. Some links may be referral or affiliate links through which the platform may earn a commission, at no additional cost to you. Never share your OTP, PIN, CVV or banking password with anyone.
-  </div>
-  <p style="margin-top:15px">© <span id="year"></span> GREEN RALD FINANCE. All Rights Reserved.</p>
- </div>
+<div id="pageview" class="page-view">
+<div class="container">
+<div class="page-title">
+<div><h2 id="pageHeading">Services</h2><p id="pageSub">Explore available options.</p></div>
+<button class="back-btn" onclick="showHome()">← Back to Home</button>
+</div>
+<div id="pageContent"></div>
+</div>
+</div>
+
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div>
+<div class="brand" style="color:white"><span class="logo">GR</span><span>GREEN RALD FINANCE<small style="color:#9eafa4">YOUR FINANCE, SIMPLIFIED</small></span></div>
+<p>Explore financial products and tools with a simple, transparent browsing experience.</p>
+</div>
+<div>
+<h4>Quick Links</h4>
+<div class="footer-links">
+<a href="#home" onclick="showHome()">Home</a>
+<a href="javascript:void(0)" onclick="openPage('accounts')">Bank Accounts</a>
+<a href="javascript:void(0)" onclick="openPage('demat')">Demat Accounts</a>
+<a href="javascript:void(0)" onclick="openPage('cards')">Credit Cards</a>
+<a href="javascript:void(0)" onclick="openPage('loans')">Loans</a>
+</div>
+</div>
+<div>
+<h4>Get in Touch</h4>
+<div class="footer-links">
+<a href="https://wa.me/918418802885" target="_self">WhatsApp: +91 84188 02885</a>
+<a href="javascript:void(0)" onclick="openPage('contact')">Contact Us</a>
+</div>
+</div>
+</div>
+<div class="copyright">© <span id="year"></span> GREEN RALD FINANCE. All rights reserved.
+<div class="disclaimer">GREEN RALD FINANCE is a product discovery and referral platform, not a bank, lender, credit bureau, or investment adviser. Financial products are offered by their respective providers. Approval, eligibility, fees, interest rates and terms are decided solely by the provider. Please review official terms before applying.</div>
+</div>
+</div>
 </footer>
 
-<a class="whatsapp-float" href="https://wa.me/918418802885" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-
 <script>
-const WHATSAPP="918418802885";
+const WA='https://wa.me/918418802885';
 
 const accounts=[
- {name:"Kotak 811 Zero Balance Account",desc:"Explore Kotak 811 digital savings account.",url:"https://leads.banksathi.com/?h=WmFhTkFvdThyZjJ6R1ZpN3JpMzg2QT09"},
- {name:"Airtel Payments Bank",desc:"Explore Airtel Payments Bank account services.",url:"https://leads.banksathi.com/?h=YWxtcDJiWkZNcEdhNTBwK1NIR1pudz09"},
- {name:"Jio Payments Bank",desc:"Explore Jio Payments Bank account services.",url:"https://leads.banksathi.com/?h=U21zTWVzdzhlUkZmZCsyL2VHa0oxZz09"},
- {name:"Kotak 811 Super Savings",desc:"Explore Kotak 811 Super Savings account.",url:"https://leads.banksathi.com/?h=R3pPZFdJa09aUmtBZHdsT0NJQkoxZz09"},
- {name:"Equitas 2.0 Account",desc:"Explore Equitas banking account options.",url:"https://leads.banksathi.com/?h=VTc0ckt1YURoUFRUL2JNcldvK004UT09"},
- {name:"DBS digibank",desc:"Explore DBS digibank account options.",url:"https://leads.banksathi.com/?h=VnF4d2ZRUnc4Rjg0WVlMS2FpcFNPQT09"}
+['Kotak 811 Zero Balance','https://leads.banksathi.com/?h=WmFhTkFvdThyZjJ6R1ZpN3JpMzg2QT09'],
+['Airtel Payments Bank','https://leads.banksathi.com/?h=YWxtcDJiWkZNcEdhNTBwK1NIR1pudz09'],
+['Jio Payments Bank','https://leads.banksathi.com/?h=U21zTWVzdzhlUkZmZCsyL2VHa0oxZz09'],
+['Kotak 811 Super Savings','https://leads.banksathi.com/?h=R3pPZFdJa09aUmtBZHdsT0NJQkoxZz09'],
+['Equitas 2.0','https://leads.banksathi.com/?h=VTc0ckt1YURoUFRUL2JNcldvK004UT09'],
+['DBS digibank','https://leads.banksathi.com/?h=VnF4d2ZRUnc4Rjg0WVlMS2FpcFNPQT09']
 ];
 
 const demat=[
- {name:"Upstox Demat Account",desc:"Explore Upstox Demat and trading account.",url:"https://leads.banksathi.com/?h=MktoNy9IWHdWN1pNTzRLejM2d2tnZz09"},
- {name:"Bajaj Finserv Demat Account",desc:"Explore Bajaj Finserv investment account options.",url:"https://leads.banksathi.com/?h=YzUycE9NbGxOZE9DZk1Kdi9pVnFaUT09"},
- {name:"Kotak Demat Account",desc:"Explore Kotak Securities Demat account.",url:"https
+['Upstox Demat Account','https://leads.banksathi.com/?h=MktoNy9IWHdWN1pNTzRLejM2d2tnZz09'],
+['Bajaj Finserv Demat Account','https://leads.banksathi.com/?h=YzUycE9NbGxOZE9DZk1Kdi9pVnFaUT09'],
+['Kotak Demat Account','https://leads.banksathi.com/?h=ekJ0d3Q0TWxEODdSNGYycWI1QnJkQT09']
+];
+
+const cardLinks=[
+'VGFTMDg0L1NQVDBSaWpEdVI0YlpLZz09',
+'Y3VEaitkSXcrWTNKeFFmZ3Vvb0ovUT09',
+'TUhaRFJtWTdUVkg1cTNiL1NzRHhKdz09',
+'NkZHUk1rRGFiNVJvbmVJN25Nc1FUQT09',
+'K0hUYlllS0h1ZjNsLzF6MFlyMmlHUT09',
+'VkYrQmtEOXRKOURQbUhQbEZrc1h2UT09',
+'MDNvemtKc3ZvRnc0MXdJNENJYXBHZz09',
+'WnhOQUVzazFJaksraWNXcyt5MEtTZz09',
+'cCs2RGMwRXArRnNNcE9qeTlkMmdjUT09',
+'TXRxVU83RnVrRlF5K2F3UmlsZytndz09',
+'WTV0dWFFbUNnMU9DYmNnOWFjSGZVZz09',
+'WmQ3RlBHeVg0eDVRZUl1Y2pSeUlqZz09',
+'aWU0V3hTNXAzSGZ2L25wQ2R1WEFOUT09',
+'UldmV0VpWUkzTEM0Y3EzeVg0d2M2QT09',
+'bXEyb3h0UzdMd1BFQ3NRZ2p0Y2Jodz09',
+'YW10SmlkejBVZkh3aWxmaE1CTSt2UT09',
+'K1pwM2tPbll1SmtEYlBDVnVUSjJYUT09',
+'ay8vWHYyOU45MXFOMDN4Vy9jOTRtQT09',
+'OTdBRDZOZ2trb3g2anlKVWsyUjhTdz09',
+'YjRsVVZYYnA2VEthZXNXU3owUERGUT09',
+'d01DN3NIMWVrajlNbHZ6ekZMc1grQT09',
+'Ty9BWmsrb0NhNytpbXNaNGRzWXg5Zz09'
+];
+
+const cardNames=[
+'HDFC Bank Credit Card',
+'Scapia Axis Bank Credit Card',
+'RBL ShopRite Credit Card',
+'Axis Bank Credit Card',
+'Axis Bank Neo Credit Card – Lifetime Free',
+'IDFC FIRST Bank Credit Card',
+'IndusInd Bank Easy Credit Card',
+'KIWI UPI RuPay Credit Card',
+'HDFC UPI RuPay Credit Card',
+'SBI Credit Card',
+'POP RuPay Credit Card',
+'Bajaj Finserv Insta EMI Card',
+'Flipkart Axis Bank Credit Card',
+'Airtel Axis Bank Credit Card',
+'YES Bank Credit Card',
+'AU Bank Credit Card',
+'Axis Bank Lifetime Free Credit Card',
+'WOW! Credit Card',
+'Kotak League Platinum Credit Card',
+'HDFC Bank Personalized Rewards Credit Card',
+'Uni GoldX Credit Card',
+'HDFC Bank FD-backed Credit Card'
+];
+
+const loanTypes=[
+'Personal Loan',
+'Home Loan',
+'Business Loan',
+'Education Loan',
+'Vehicle Loan',
+'Gold Loan'
+];
+
+function productCards(items,tag,desc){
+return `<div class="product-grid">
+${items.map(([name,url])=>`
+<article class="product-card">
+<span class="tag">${tag}</span>
+<h3>${name}</h3>
+<p>${desc}</p>
+<a class="btn apply" href="${url}" target="_self" rel="noopener">Apply Now <span>→</span></a>
+</article>`).join('')}
+</div>`;
+}
+
+function openPage(key){
+document.getElementById('homeview').classList.add('hidden');
+document.getElementById('pageview').classList.add('show');
+document.getElementById('navlinks').classList.remove('open');
+
+let title='',sub='',html='';
+
+if(key==='accounts'){
+title='Bank Accounts';
+sub='Choose a bank account option and continue to the provider application.';
+html=productCards(accounts,'BANK ACCOUNT','You will continue to the provider’s application page.');
+}
+else if(key==='demat'){
+title='Demat Accounts';
+sub='Explore Demat account options from the listed providers.';
+html=productCards(demat,'DEMAT ACCOUNT','Review provider details and applicable charges before applying.');
+}
+else if(key==='cards'){
+title='Credit Cards';
+sub='Browse each card separately. Eligibility and approval are decided by the card issuer.';
+html=productCards(cardNames.map((n,i)=>[n,'https://leads.banksathi.com/?h='+cardLinks[i]]),'CREDIT CARD','Check eligibility, fees, benefits and terms with the issuer before applying.');
+}
+else if(key==='loans'){
+title='Loan Assistance';
+sub='Select the type of loan you want help with.';
+html=`<div class="note">Loan enquiries are handled on WhatsApp. Share your requirement to receive guidance. Loan approval, rate and eligibility are subject to the lender’s checks.</div>
+<div class="product-grid">
+${loanTypes.map(n=>`
+<article class="product-card">
+<span class="tag">LOAN CATEGORY</span>
+<h3>${n}</h3>
+<p>Ask our team about lender options, eligibility and next steps.</p>
+<a class="btn apply" href="${WA}?text=${encodeURIComponent('Hi GREEN RALD FINANCE, I want information about a '+n+'.')}" target="_self">Apply / Enquire Now →</a>
+</article>`).join('')}
+</div>`;
+}
+else if(key==='cibil'){
+title='CIBIL Score';
+sub='Visit the official CIBIL website to access your credit score and report.';
+html=`<div class="product-grid">
+<article class="product-card">
+<span class="tag">OFFICIAL CREDIT BUREAU</span>
+<h3>Check Your CIBIL Score</h3>
+<p>Use the official TransUnion CIBIL website. Review its terms and any charges before proceeding.</p>
+<a class="btn apply" href="https://www.cibil.com/" target="_self" rel="noopener">Check CIBIL Score →</a>
+</article>
+</div>`;
+}
+else if(key==='emi'||key==='tools'){
+title=key==='emi'?'EMI Calculator':'Financial Tools';
+sub='Estimate your monthly loan installment. This is an illustrative calculation.';
+html=`<div class="calculator">
+<div class="calc-grid">
+<div class="field">
+<label for="amount">Loan amount (₹)</label>
+<input id="amount" type="range" min="10000" max="10000000" step="10000" value="500000" oninput="calculateEMI()">
+<output id="amountOut">₹5,00,000</output>
+</div>
+<div class="field">
+<label for="rate">Annual interest rate (%)</label>
+<input id="rate" type="range" min="1" max="30" step="0.25" value="10" oninput="calculateEMI()">
+<output id="rateOut">10%</output>
+</div>
+<div class="field">
+<label for="months">Loan tenure (months)</label>
+<input id="months" type="range" min="6" max="360" step="6" value="60" oninput="calculateEMI()">
+<output id="monthsOut">60 months</output>
+</div>
+</div>
+<div class="result">
+<div><small>MONTHLY EMI</small><strong id="emiOut">₹10,624</strong></div>
+<div><small>TOTAL INTEREST</small><strong id="interestOut">₹1,37,430</strong></div>
+<div><small>TOTAL PAYMENT</small><strong id="totalOut">₹6,37,430</strong></div>
+</div>
+<p style="font-size:10px;color:#7d8b81;margin:13px 0 0">Actual EMI may vary based on lender terms, fees, rate type and repayment schedule.</p>
+</div>`;
+}
+else if(key==='contact'){
+title='Contact GREEN RALD FINANCE';
+sub='Reach out for help navigating the available product options.';
+html=`<div class="contact-panel">
+<div><h3>We’re here to help.</h3><p>WhatsApp us at +91 84188 02885 to discuss your query.</p></div>
+<a class="btn btn-primary" href="${WA}" target="_self">Message on WhatsApp →</a>
+</div>`;
+}
+
+document.getElementById('pageHeading').textContent=title;
+document.getElementById('pageSub').textContent=sub;
+document.getElementById('pageContent').innerHTML=html;
+window.scrollTo({top:0,behavior:'smooth'});
+if(key==='emi'||key==='tools')calculateEMI();
+}
+
+function showHome(){
+document.getElementById('pageview').classList.remove('show');
+document.getElementById('homeview').classList.remove('hidden');
+document.getElementById('navlinks').classList.remove('open');
+window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function scrollToCategories(){
+document.getElementById('categories').scrollIntoView({behavior:'smooth'});
+}
+
+function toggleMenu(){
+document.getElementById('navlinks').classList.toggle('open');
+}
+
+function inr(n){
+return '₹'+Math.round(n).toLocaleString('en-IN');
+}
+
+function calculateEMI(){
+let a=Number(document.getElementById('amount')?.value||500000);
+let r=Number(document.getElementById('rate')?.value||10);
+let m=Number(document.getElementById('months')?.value||60);
+let monthly=r/1200;
+let emi=monthly===0?a/m:a*monthly*Math.pow(1+monthly,m)/(Math.pow(1+monthly,m)-1);
+let total=emi*m;
+let set=(id,v)=>{
+let e=document.getElementById(id);
+if(e)e.textContent=v;
+};
+set('amountOut',inr(a));
+set('rateOut',r+'%');
+set('monthsOut',m+' months');
+set('emiOut',inr(emi));
+set('interestOut',inr(total-a));
+set('totalOut',inr(total));
+}
+
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
