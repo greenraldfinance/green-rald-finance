@@ -390,14 +390,4 @@ document.getElementById('yearsLabel').textContent=years.value+(+years.value===1?
 document.getElementById('emiValue').textContent=money(emi);
 document.getElementById('principal').textContent=money(p);
 document.getElementById('interest').textContent=money(emi*n-p);
-document.getElementById('total').textContent=money(emi*n);
-}
-[amount,rate,years].forEach(x=>x.addEventListener('input',calc));
-document.getElementById('reset').addEventListener('click',()=>{
-amount.value=500000;rate.value=12;years.value=5;calc();
-});
-document.getElementById('year').textContent=new Date().getFullYear();
-calc();
-</script>
-</body>
-</html>
+document.getElementById('total').textCo
