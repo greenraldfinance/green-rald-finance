@@ -1,34 +1,337 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#063d2b">
-<meta name="description" content="Green RALD Finance - smart financial services, bank account opening, credit cards, demat and CIBIL information.">
-<title>Green RALD Finance | Smart Financial Services</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#063d2b">
+<title>Green RALD Finance</title>
 <style>
-:root{--g:#063d2b;--g2:#08734d;--gold:#e2b943;--pale:#edf6f0;--ink:#123b32;--muted:#63776e}*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;scroll-padding-top:90px}body{font:16px/1.55 Arial,sans-serif;color:var(--ink);background:#f7faf7}a{text-decoration:none;color:inherit}.wrap{width:min(1180px,92%);margin:auto}header{position:sticky;top:0;z-index:20;background:#fff;box-shadow:0 2px 12px #062f2212}.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:10px;color:var(--g);font-weight:900;letter-spacing:.5px}.brandmark{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:var(--g);border:3px solid var(--gold);color:var(--gold);font-size:22px;font-weight:900}.brand small{display:block;font-size:9px;letter-spacing:2px;color:#997a24}.navlinks{display:flex;gap:24px;font-size:13px;font-weight:bold}.btn{display:inline-block;border:0;border-radius:10px;padding:12px 20px;font-weight:bold;text-align:center;cursor:pointer}.gold{background:var(--gold);color:#083c2c}.green{background:var(--g);color:white}.outline{border:1px solid #d4e6dc;color:white}.menu{display:none;border:0;background:var(--g);color:#fff;padding:9px 12px;border-radius:8px}.hero{color:white;background:radial-gradient(circle at 85% 20%,#167b55,transparent 28%),linear-gradient(120deg,#032b20,#07563b 72%,#0b7049);padding:60px 0}.heroGrid{display:grid;grid-template-columns:1.1fr .9fr;gap:38px;align-items:center}.eyebrow{display:inline-block;border:1px solid var(--gold);color:#ffdf80;border-radius:30px;padding:6px 14px;font-size:12px;font-weight:bold}.hero h1{font-size:clamp(34px,5vw,58px);line-height:1.12;margin:18px 0}.hero h1 span{color:#f2c84e}.hero p{color:#e1eee7}.actions{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0}.heroPanel{background:#ffffff0c;border:1px solid #d9bb5d88;border-radius:22px;padding:28px;backdrop-filter:blur(4px)}.heroPanel .brand{color:#fff;margin-bottom:20px}.heroPanel .brand small{color:#f1d77e}.heroServices{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;text-align:center;margin-top:20px}.heroServices div{padding:12px 5px;border-right:1px solid #ffffff55}.heroServices div:last-child{border:0}.heroServices b{display:block;font-size:27px}.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:20px 0;text-align:center;background:#fff}.trust b{color:var(--g)}.trust small{display:block;color:var(--muted);font-size:12px}section{padding:58px 0}.soft{background:linear-gradient(140deg,#eef7f1,#e5f2eb)}.sectionHead{text-align:center;max-width:760px;margin:0 auto 30px}.kicker{font-size:12px;color:#9a781f;font-weight:900;letter-spacing:2px}.sectionHead h2{font-size:clamp(26px,4vw,36px);color:var(--g);margin:8px 0}.sectionHead p{color:var(--muted)}.serviceGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#fff;border:1px solid #deebe2;border-radius:16px;padding:23px;box-shadow:0 7px 22px #0b4a2710;display:flex;flex-direction:column}.cardIcon{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:var(--g);border:3px solid var(--gold);color:var(--gold);font-size:26px;margin-bottom:14px}.card h3{color:var(--g);font-size:20px;margin-bottom:7px}.card p{font-size:14px;color:var(--muted);flex:1;margin-bottom:18px}.card .btn{width:100%;font-size:14px}.bankArea{display:none;margin-top:30px}.bankArea.show{display:block;animation:fade .25s ease}@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}.bankHead{text-align:center;margin-bottom:20px}.bankHead h2{color:var(--g);font-size:27px}.bankHead p{color:var(--muted);font-size:14px}.bankGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.bankCard{background:#fff;border:1px solid #dce9e0;border-radius:16px;padding:20px;text-align:center;box-shadow:0 5px 18px #0b4a2710;display:flex;flex-direction:column;align-items:center}.bankLogo{width:100%;height:90px;border-radius:12px;background:#f4f8f5;display:grid;place-items:center;margin-bottom:14px;padding:10px}.bankLogo img{max-width:100%;max-height:68px;object-fit:contain}.bankLogo .wordLogo{font-weight:900;font-size:20px;color:var(--g)}.bankCard h3{font-size:17px;color:var(--g);min-height:48px}.bankCard p{font-size:12px;color:var(--muted);margin:8px 0 16px;flex:1}.bankCard .btn{width:100%;font-size:13px}.brandStamp{font-size:10px;color:#8b9b91;margin-top:10px;letter-spacing:.6px}.score{background:linear-gradient(120deg,#062f22,#0b6744);color:white;border-radius:22px;padding:30px;display:flex;align-items:center;justify-content:space-between;gap:20px}.score h2{color:white;font-size:30px}.score p{color:#dcebe1;max-width:700px;font-size:14px}.calc{display:grid;grid-template-columns:1fr 1fr;gap:22px}.panel{background:#fff;border:1px solid #dfebe2;border-radius:16px;padding:24px}.field{margin:16px 0}.line{display:flex;justify-content:space-between;gap:10px;font-size:13px;margin-bottom:8px}.field input{width:100%;accent-color:var(--g)}.emi{font-size:36px;color:var(--g);font-weight:900;margin:8px 0}.result{background:#edf6f0}.resultRow{display:flex;justify-content:space-between;border-bottom:1px solid #d8e7dd;padding:10px 0;font-size:13px}.muted{font-size:11px;color:var(--muted);margin-top:12px}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.step{background:#fff;border:1px solid #e0ebe3;border-radius:14px;padding:22px}.step b{display:grid;place-items:center;width:40px;height:40px;background:var(--gold);border-radius:12px;margin-bottom:12px}.step h3{color:var(--g);margin-bottom:5px}.step p{font-size:13px;color:var(--muted)}.cta{background:#fff8e4;border:1px solid #efdfae;border-radius:18px;padding:28px;display:flex;align-items:center;justify-content:space-between;gap:20px}.cta h2{color:var(--g);margin:5px 0}.faq{max-width:800px;margin:auto}details{padding:15px 0;border-bottom:1px solid #dce8df}summary{font-weight:bold;color:var(--g);cursor:pointer}details p{padding-top:8px;color:var(--muted);font-size:14px}footer{background:#04291d;color:#dcebe0;padding:38px 0 18px}.footgrid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:24px}footer h4{color:#f1cf6a;margin-bottom:10px}footer p,footer li{font-size:13px;color:#c3d8ca}footer ul{list-style:none}footer li{margin:7px 0}.disclaimer{border-top:1px solid #ffffff22;margin-top:22px;padding-top:16px;font-size:11px;color:#b9cebf}.waFloat{position:fixed;right:16px;bottom:16px;z-index:15;background:#0b9859;color:white;border-radius:30px;padding:12px 17px;font-weight:bold;box-shadow:0 4px 16px #0002}
-@media(max-width:850px){.heroGrid{grid-template-columns:1fr}.navlinks{display:none;position:absolute;top:76px;left:0;right:0;background:#fff;padding:18px;flex-direction:column}.navlinks.open{display:flex}.menu{display:block}.nav>.navWhats{display:none}.serviceGrid{grid-template-columns:repeat(2,1fr)}.score{align-items:flex-start;flex-direction:column}}
-@media(max-width:580px){.brand{font-size:13px}.brandmark{width:44px;height:44px}.brand small{font-size:8px}.hero{padding:44px 0}.heroPanel{padding:20px}.heroServices{font-size:12px}.trust{grid-template-columns:repeat(2,1fr)}section{padding:44px 0}.serviceGrid,.bankGrid,.calc,.steps,.footgrid{grid-template-columns:1fr}.score{padding:23px}.cta{align-items:flex-start;flex-direction:column}.waFloat{right:9px;bottom:9px;font-size:13px}}
-</style></head>
+:root{--g:#063d2b;--g2:#08734d;--gold:#e2b943;--pale:#edf6f0;--ink:#123b32;--muted:#63776e}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{font:16px/1.55 Arial,sans-serif;color:var(--ink);background:#f7faf7}
+a{text-decoration:none;color:inherit}
+.wrap{width:min(1150px,92%);margin:auto}
+header{position:sticky;top:0;z-index:20;background:#fff;box-shadow:0 2px 12px #062f2212}
+.nav{min-height:75px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--g);font-weight:900}
+.brandmark{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--g);border:3px solid var(--gold);color:var(--gold);font-size:21px;font-weight:900}
+.brand small{display:block;font-size:9px;letter-spacing:2px;color:#997a24}
+.navlinks{display:flex;gap:20px;font-size:13px;font-weight:bold}
+.btn{display:inline-block;border:0;border-radius:10px;padding:12px 20px;font-weight:bold;text-align:center;cursor:pointer}
+.gold{background:var(--gold);color:#083c2c}
+.green{background:var(--g);color:white}
+.outline{border:1px solid #d4e6dc;color:white}
+.menu{display:none;background:var(--g);color:#fff;padding:9px 12px;border:0;border-radius:8px}
+.hero{color:white;background:linear-gradient(120deg,#032b20,#07563b 72%,#0b7049);padding:60px 0}
+.heroGrid{display:grid;grid-template-columns:1.1fr .9fr;gap:35px;align-items:center}
+.eyebrow{display:inline-block;border:1px solid var(--gold);color:#ffdf80;border-radius:30px;padding:6px 14px;font-size:12px;font-weight:bold}
+.hero h1{font-size:clamp(34px,5vw,55px);line-height:1.15;margin:18px 0}
+.hero h1 span{color:#f2c84e}
+.hero p{color:#e1eee7}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0}
+.heroPanel{background:#ffffff0c;border:1px solid #d9bb5d88;border-radius:22px;padding:28px}
+.heroPanel h2{color:#f3ce62;text-align:center;font-family:Georgia,serif;font-style:italic}
+.heroServices{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;text-align:center;margin-top:20px}
+.heroServices b{display:block;font-size:27px}
+.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:20px 0;text-align:center;background:white}
+.trust b{color:var(--g)}
+.trust small{display:block;color:var(--muted);font-size:12px}
+section{padding:55px 0}
+.soft{background:linear-gradient(140deg,#eef7f1,#e5f2eb)}
+.sectionHead{text-align:center;max-width:760px;margin:0 auto 30px}
+.kicker{font-size:12px;color:#9a781f;font-weight:900;letter-spacing:2px}
+.sectionHead h2{font-size:clamp(26px,4vw,36px);color:var(--g);margin:8px 0}
+.sectionHead p{color:var(--muted)}
+.serviceGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:white;border:1px solid #deebe2;border-radius:16px;padding:23px;box-shadow:0 7px 22px #0b4a2710;display:flex;flex-direction:column}
+.cardIcon{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:var(--g);border:3px solid var(--gold);color:var(--gold);font-size:26px;margin-bottom:14px}
+.card h3{color:var(--g);font-size:20px;margin-bottom:7px}
+.card p{font-size:14px;color:var(--muted);flex:1;margin-bottom:18px}
+.card .btn{width:100%;font-size:14px}
+.bankArea{display:none;margin-top:30px}
+.bankArea.show{display:block}
+.bankHead{text-align:center;margin-bottom:20px}
+.bankHead h2{color:var(--g);font-size:27px}
+.bankHead p{color:var(--muted);font-size:14px}
+.bankGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.bankCard{background:white;border:1px solid #dce9e0;border-radius:16px;padding:20px;text-align:center;box-shadow:0 5px 18px #0b4a2710;display:flex;flex-direction:column;align-items:center}
+.bankLogo{width:100%;height:85px;border-radius:12px;background:#f4f8f5;display:grid;place-items:center;margin-bottom:14px;padding:10px}
+.wordLogo{font-weight:900;font-size:21px;color:var(--g)}
+.bankCard h3{font-size:17px;color:var(--g);min-height:45px}
+.bankCard p{font-size:13px;color:var(--muted);margin:8px 0 16px;flex:1}
+.bankCard .btn{width:100%;font-size:13px}
+.brandStamp{font-size:10px;color:#8b9b91;margin-top:10px;letter-spacing:.5px}
+.score{background:linear-gradient(120deg,#062f22,#0b6744);color:white;border-radius:22px;padding:30px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.score h2{color:white;font-size:28px}
+.score p{color:#dcebe1;max-width:700px;font-size:14px}
+.calc{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.panel{background:white;border:1px solid #dfebe2;border-radius:16px;padding:24px}
+.field{margin:16px 0}
+.line{display:flex;justify-content:space-between;gap:10px;font-size:13px;margin-bottom:8px}
+.field input{width:100%;accent-color:var(--g)}
+.emi{font-size:34px;color:var(--g);font-weight:900;margin:8px 0}
+.result{background:#edf6f0}
+.resultRow{display:flex;justify-content:space-between;border-bottom:1px solid #d8e7dd;padding:10px 0;font-size:13px}
+.muted{font-size:11px;color:var(--muted);margin-top:12px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.step{background:white;border:1px solid #e0ebe3;border-radius:14px;padding:22px}
+.step b{display:grid;place-items:center;width:40px;height:40px;background:var(--gold);border-radius:12px;margin-bottom:12px}
+.step h3{color:var(--g);margin-bottom:5px}
+.step p{font-size:13px;color:var(--muted)}
+.cta{background:#fff8e4;border:1px solid #efdfae;border-radius:18px;padding:28px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.cta h2{color:var(--g);margin:5px 0}
+.faq{max-width:800px;margin:auto}
+details{padding:15px 0;border-bottom:1px solid #dce8df}
+summary{font-weight:bold;color:var(--g);cursor:pointer}
+details p{padding-top:8px;color:var(--muted);font-size:14px}
+footer{background:#04291d;color:#dcebe0;padding:38px 0 18px}
+.footgrid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:24px}
+footer h4{color:#f1cf6a;margin-bottom:10px}
+footer p,footer li{font-size:13px;color:#c3d8ca}
+footer ul{list-style:none}
+footer li{margin:7px 0}
+.disclaimer{border-top:1px solid #ffffff22;margin-top:22px;padding-top:16px;font-size:11px;color:#b9cebf}
+.waFloat{position:fixed;right:16px;bottom:16px;z-index:15;background:#0b9859;color:white;border-radius:30px;padding:12px 17px;font-weight:bold;box-shadow:0 4px 16px #0002}
+@media(max-width:850px){
+.heroGrid{grid-template-columns:1fr}
+.navlinks{display:none;position:absolute;top:75px;left:0;right:0;background:white;padding:18px;flex-direction:column}
+.navlinks.open{display:flex}
+.menu{display:block}
+.nav>.navWhats{display:none}
+.serviceGrid{grid-template-columns:repeat(2,1fr)}
+.score{align-items:flex-start;flex-direction:column}
+}
+@media(max-width:580px){
+.brand{font-size:13px}
+.brandmark{width:43px;height:43px}
+.hero{padding:42px 0}
+.heroPanel{padding:20px}
+.trust{grid-template-columns:repeat(2,1fr)}
+section{padding:42px 0}
+.serviceGrid,.bankGrid,.calc,.steps,.footgrid{grid-template-columns:1fr}
+.score{padding:23px}
+.cta{align-items:flex-start;flex-direction:column}
+.waFloat{right:9px;bottom:9px;font-size:13px}
+}
+</style>
+</head>
 <body>
-<header><div class="wrap nav"><a class="brand" href="#home"><span class="brandmark">GR</span><span>GREEN RALD FINANCE<small>SMART FINANCIAL SERVICES</small></span></a><nav class="navlinks" id="nav"><a href="#home">Home</a><a href="#services">Services</a><a href="#cibil">CIBIL Score</a><a href="#emi">EMI Calculator</a><a href="#contact">Contact</a></nav><a class="btn green navWhats" href="https://wa.me/918418802885">Chat on WhatsApp</a><button class="menu" id="menu" aria-label="Open menu">☰</button></div></header>
-<main>
-<section class="hero" id="home"><div class="wrap heroGrid"><div><span class="eyebrow">YOUR FINANCIAL PARTNER</span><h1>Har Financial Zaroorat Ke Liye<br>Ek Hi Jagah – <span>Green RALD Finance</span></h1><p>Bank Account Opening, Credit Cards, Demat Account aur financial services ki jaankari — simple process aur trusted support ke saath.</p><div class="actions"><a class="btn gold" href="#services">Explore Services →</a><a class="btn outline" href="https://wa.me/918418802885">WhatsApp Us</a></div><p>Safe&nbsp; • &nbsp;Simple&nbsp; • &nbsp;Reliable</p></div><div class="heroPanel"><div class="brand"><span class="brandmark">GR</span><span>GREEN RALD FINANCE<small>SMART FINANCIAL SERVICES</small></span></div><h2 style="color:#f3ce62;text-align:center;font-family:Georgia,serif;font-style:italic">Dream • Plan • Grow</h2><div class="heroServices"><div><b>🏦</b>Bank Account<br>Opening</div><div><b>💳</b>Credit Cards</div><div><b>📈</b>Demat Account</div></div></div></div></section>
-<div class="wrap trust"><div><b>✓ Multiple Services</b><small>Banking, Cards, Investment</small></div><div><b>✓ Easy Application</b><small>Referral Links</small></div><div><b>✓ Simple Tools</b><small>EMI Calculator</small></div><div><b>✓ Clear Information</b><small>Terms & Conditions</small></div></div>
-<section class="soft" id="services"><div class="wrap"><div class="sectionHead"><span class="kicker">OUR SERVICES</span><h2>Financial Services for a Better Tomorrow</h2><p>Choose the service you need and take the next step towards your financial goals.</p></div><div class="serviceGrid">
-<article class="card"><div class="cardIcon">🏦</div><h3>Account Opening</h3><p>Open a savings account with one of our listed banking partners through your referral link.</p><button class="btn green" id="showBanks">Apply Now →</button><div class="brandStamp">GREEN RALD FINANCE • ACCOUNT SERVICES</div></article>
-<article class="card"><div class="cardIcon">💳</div><h3>Credit Card</h3><p>Credit card options, features, fees aur eligibility ke baare mein jaankari paane ke liye WhatsApp par enquiry karein.</p><a class="btn green" href="https://wa.me/918418802885?text=Hello%20Green%20RALD%20Finance%2C%20mujhe%20Credit%20Card%20ke%20baare%20mein%20jaankari%20chahiye.">Enquire Now →</a><div class="brandStamp">GREEN RALD FINANCE</div></article>
-<article class="card"><div class="cardIcon">📈</div><h3>Demat Account</h3><p>Demat account opening, charges aur investment-related information ke liye enquiry karein.</p><a class="btn green" href="https://wa.me/918418802885?text=Hello%20Green%20RALD%20Finance%2C%20mujhe%20Demat%20Account%20ke%20baare%20mein%20jaankari%20chahiye.">Enquire Now →</a><div class="brandStamp">GREEN RALD FINANCE</div></article>
+
+<header>
+<div class="wrap nav">
+<a class="brand" href="#home">
+<span class="brandmark">GR</span>
+<span>GREEN RALD FINANCE<small>SMART FINANCIAL SERVICES</small></span>
+</a>
+<nav class="navlinks" id="nav">
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a href="#cibil">CIBIL Score</a>
+<a href="#emi">EMI Calculator</a>
+<a href="#contact">Contact</a>
+</nav>
+<a class="btn green navWhats" href="https://wa.me/918418802885">Chat on WhatsApp</a>
+<button class="menu" id="menu" aria-label="Open menu">☰</button>
 </div>
-<div class="bankArea" id="bankArea"><div class="bankHead"><span class="kicker">CHOOSE YOUR BANK</span><h2>Account Opening Options</h2><p>Apni pasand ka bank select karein. Har Apply Now button usi bank ke referral link par le jayega.</p></div><div class="bankGrid" id="bankGrid"></div></div>
-</div></section>
-<section id="cibil"><div class="wrap"><div class="score"><div><span class="kicker" style="color:#f2ce68">CHECK YOUR CREDIT HEALTH</span><h2>CIBIL Score Check</h2><p>Apna credit score aur report CIBIL ki official website par check karein. Verification aur website ki current conditions apply hongi.</p></div><a class="btn gold" href="https://www.cibil.com/freecibilscore" target="_blank" rel="noopener noreferrer">Check Now ↗</a></div></div></section>
-<section class="soft" id="emi"><div class="wrap"><div class="sectionHead"><span class="kicker">PLAN YOUR REPAYMENT</span><h2>Free EMI Calculator</h2><p>Loan amount, annual interest rate aur tenure ke basis par estimated EMI dekhein.</p></div><div class="calc"><div class="panel"><div class="field"><div class="line"><label for="amount">Loan Amount</label><b id="amountLabel"></b></div><input id="amount" type="range" min="10000" max="10000000" step="10000" value="500000"></div><div class="field"><div class="line"><label for="rate">Annual Interest Rate</label><b id="rateLabel"></b></div><input id="rate" type="range" min="1" max="36" step=".25" value="12"></div><div class="field"><div class="line"><label for="years">Loan Tenure</label><b id="yearsLabel"></b></div><input id="years" type="range" min="1" max="30" value="5"></div><button class="btn green" id="reset">Reset Calculator</button></div><div class="panel result" aria-live="polite"><h3>Estimated Monthly EMI</h3><div class="emi" id="emiValue"></div><div class="resultRow"><span>Loan Amount</span><b id="principal"></b></div><div class="resultRow"><span>Total Interest</span><b id="interest"></b></div><div class="resultRow"><span>Total Repayment</span><b id="total"></b></div><p class="muted">Illustrative estimate only. Actual EMI, fees and terms lender ke hisaab se alag ho sakte hain.</p></div></div></div></section>
-<section><div class="wrap"><div class="sectionHead"><span class="kicker">WHY CHOOSE US</span><h2>Your Trusted Financial Partner</h2></div><div class="steps"><div class="step"><b>01</b><h3>Choose a Service</h3><p>Account opening, credit card ya Demat service select karein.</p></div><div class="step"><b>02</b><h3>Apply Online</h3><p>Relevant partner ke official/referral application page par jaayein.</p></div><div class="step"><b>03</b><h3>Review Details</h3><p>Eligibility, fees, terms aur conditions verify karke aage badhein.</p></div></div></div></section>
-<section class="soft" id="contact"><div class="wrap"><div class="cta"><div><span class="kicker">WE'RE HERE TO HELP</span><h2>Need Help? Contact Green RALD Finance</h2><p>Apni enquiry WhatsApp par bhejein.</p></div><a class="btn green" href="https://wa.me/918418802885?text=Hello%20Green%20RALD%20Finance%2C%20mujhe%20help%20chahiye.">Chat on WhatsApp</a></div></div></section>
-<section><div class="wrap"><div class="sectionHead"><span class="kicker">HELP CENTRE</span><h2>Frequently Asked Questions</h2></div><div class="faq"><details><summary>Account opening kaise karein?</summary><p>Account Opening card par Apply Now dabayein, phir bank select karke uske Apply Now button par click karein.</p></details><details><summary>Kya account ya card approval guaranteed hai?</summary><p>Nahi. Approval bank/provider ki eligibility, verification aur policy par depend karta hai.</p></details><details><summary>Kya CIBIL score free check kar sakte hain?</summary><p>CIBIL ki official website par available free score/report option aur current terms check karein.</p></details><details><summary>EMI calculator ka result exact hota hai?</summary><p>Calculator ek estimate deta hai. Actual EMI lender ke rates, fees aur terms ke mutabik badal sakti hai.</p></details></div></div></section>
+</header>
+
+<main>
+<section class="hero" id="home">
+<div class="wrap heroGrid">
+<div>
+<span class="eyebrow">YOUR FINANCIAL PARTNER</span>
+<h1>Har Financial Zaroorat Ke Liye<br>Ek Hi Jagah – <span>Green RALD Finance</span></h1>
+<p>Bank Account Opening, Credit Cards, Demat Account aur financial services ki jaankari — simple process aur trusted support ke saath.</p>
+<div class="actions">
+<a class="btn gold" href="#services">Explore Services →</a>
+<a class="btn outline" href="https://wa.me/918418802885">WhatsApp Us</a>
+</div>
+<p>Safe • Simple • Reliable</p>
+</div>
+<div class="heroPanel">
+<div class="brand" style="color:white">
+<span class="brandmark">GR</span>
+<span>GREEN RALD FINANCE<small>SMART FINANCIAL SERVICES</small></span>
+</div>
+<h2>Dream • Plan • Grow</h2>
+<div class="heroServices">
+<div><b>🏦</b>Bank Account<br>Opening</div>
+<div><b>💳</b>Credit Cards</div>
+<div><b>📈</b>Demat Account</div>
+</div>
+</div>
+</div>
+</section>
+
+<div class="wrap trust">
+<div><b>✓ Multiple Services</b><small>Banking, Cards, Investment</small></div>
+<div><b>✓ Easy Application</b><small>Referral Links</small></div>
+<div><b>✓ Simple Tools</b><small>EMI Calculator</small></div>
+<div><b>✓ Clear Information</b><small>Terms & Conditions</small></div>
+</div>
+
+<section class="soft" id="services">
+<div class="wrap">
+<div class="sectionHead">
+<span class="kicker">OUR SERVICES</span>
+<h2>Financial Services for a Better Tomorrow</h2>
+<p>Choose the service you need and take the next step towards your financial goals.</p>
+</div>
+
+<div class="serviceGrid">
+<article class="card">
+<div class="cardIcon">🏦</div>
+<h3>Account Opening</h3>
+<p>Choose from six savings account options and apply online through the respective partner link.</p>
+<button class="btn green" id="showBanks">Apply Now →</button>
+</article>
+
+<article class="card">
+<div class="cardIcon">💳</div>
+<h3>Credit Cards</h3>
+<p>Credit card enquiry and assistance. Contact us on WhatsApp for more information.</p>
+<a class="btn green" href="https://wa.me/918418802885?text=Hello%20Green%20RALD%20Finance%2C%20mujhe%20Credit%20Card%20ke%20baare%20mein%20jaankari%20chahiye.">Apply Now →</a>
+</article>
+
+<article class="card">
+<div class="cardIcon">📈</div>
+<h3>Demat Account</h3>
+<p>Explore Demat and trading account options from our listed partners.</p>
+<button class="btn green" id="showDemat">Apply Now →</button>
+</article>
+</div>
+
+<div class="bankArea" id="bankArea">
+<div class="bankHead">
+<h2>Choose Your Bank Account</h2>
+<p>Select a bank below to continue with its account opening process.</p>
+</div>
+<div class="bankGrid" id="bankGrid"></div>
+</div>
+
+<div class="bankArea" id="dematArea">
+<div class="bankHead">
+<h2>Choose Your Demat Account</h2>
+<p>Compare the available partner options and apply through your selected link.</p>
+</div>
+<div class="bankGrid" id="dematGrid"></div>
+</div>
+</div>
+</section>
+
+<section id="cibil">
+<div class="wrap">
+<div class="score">
+<div>
+<h2>Check Your CIBIL Score</h2>
+<p>Visit the official CIBIL website to check your credit score and report. Review the current terms on the provider website.</p>
+</div>
+<a class="btn gold" href="https://www.cibil.com/freecibilscore" target="_blank" rel="noopener noreferrer">Check Now ↗</a>
+</div>
+</div>
+</section>
+
+<section class="soft" id="emi">
+<div class="wrap">
+<div class="sectionHead">
+<span class="kicker">PLAN YOUR REPAYMENT</span>
+<h2>Free EMI Calculator</h2>
+<p>Loan amount, annual interest rate aur tenure ke basis par estimated EMI dekhein.</p>
+</div>
+<div class="calc">
+<div class="panel">
+<div class="field">
+<div class="line"><label for="amount">Loan Amount</label><b id="amountLabel"></b></div>
+<input id="amount" type="range" min="10000" max="10000000" step="10000" value="500000">
+</div>
+<div class="field">
+<div class="line"><label for="rate">Annual Interest Rate</label><b id="rateLabel"></b></div>
+<input id="rate" type="range" min="1" max="36" step=".25" value="12">
+</div>
+<div class="field">
+<div class="line"><label for="years">Loan Tenure</label><b id="yearsLabel"></b></div>
+<input id="years" type="range" min="1" max="30" value="5">
+</div>
+<button class="btn green" id="reset">Reset Calculator</button>
+</div>
+<div class="panel result" aria-live="polite">
+<h3>Estimated Monthly EMI</h3>
+<div class="emi" id="emiValue"></div>
+<div class="resultRow"><span>Loan Amount</span><b id="principal"></b></div>
+<div class="resultRow"><span>Total Interest</span><b id="interest"></b></div>
+<div class="resultRow"><span>Total Repayment</span><b id="total"></b></div>
+<p class="muted">Illustrative estimate only. Actual EMI, fees and terms lender ke hisaab se alag ho sakte hain.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<div class="sectionHead">
+<span class="kicker">WHY CHOOSE US</span>
+<h2>Your Trusted Financial Partner</h2>
+</div>
+<div class="steps">
+<div class="step"><b>01</b><h3>Choose a Service</h3><p>Account opening, credit card ya Demat service select karein.</p></div>
+<div class="step"><b>02</b><h3>Apply Online</h3><p>Relevant partner ke application page par jaayein.</p></div>
+<div class="step"><b>03</b><h3>Review Details</h3><p>Eligibility, fees, terms aur conditions verify karke aage badhein.</p></div>
+</div>
+</div>
+</section>
+
+<section class="soft" id="contact">
+<div class="wrap">
+<div class="cta">
+<div>
+<span class="kicker">WE'RE HERE TO HELP</span>
+<h2>Need Help? Contact Green RALD Finance</h2>
+<p>Apni enquiry WhatsApp par bhejein.</p>
+</div>
+<a class="btn green" href="https://wa.me/918418802885?text=Hello%20Green%20RALD%20Finance%2C%20mujhe%20help%20chahiye.">Chat on WhatsApp</a>
+</div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<div class="sectionHead">
+<span class="kicker">HELP CENTRE</span>
+<h2>Frequently Asked Questions</h2>
+</div>
+<div class="faq">
+<details><summary>Account opening kaise karein?</summary><p>Account Opening card par Apply Now dabayein, phir bank select karke uske Apply Now button par click karein.</p></details>
+<details><summary>Kya account ya card approval guaranteed hai?</summary><p>Nahi. Approval bank/provider ki eligibility, verification aur policy par depend karta hai.</p></details>
+<details><summary>Kya CIBIL score free check kar sakte hain?</summary><p>CIBIL ki official website par available free score/report option aur current terms check karein.</p></details>
+<details><summary>EMI calculator ka result exact hota hai?</summary><p>Calculator ek estimate deta hai. Actual EMI lender ke rates, fees aur terms ke mutabik badal sakti hai.</p></details>
+</div>
+</div>
+</section>
 </main>
-<footer><div class="wrap"><div class="footgrid"><div><div class="brand" style="color:#fff;margin-bottom:12px"><span class="brandmark">GR</span><span>GREEN RALD FINANCE<small>SMART FINANCIAL SERVICES</small></span></div><p>Banking aur financial services ki information aur enquiry ke liye aapka online destination.</p></div><div><h4>Quick Links</h4><ul><li><a href="#services">Services</a></li><li><a href="#cibil">CIBIL Score</a></li><li><a href="#emi">EMI Calculator</a></li></ul></div><div><h4>Contact</h4><ul><li>WhatsApp: <a href="https://wa.me/918418802885">+91 84188 02885</a></li><li><a href="https://www.cibil.com/freecibilscore" target="_blank" rel="noopener noreferrer">Official CIBIL Website</a></li></ul></div></div><div class="disclaimer">© <span id="year"></span> Green RALD Finance. All rights reserved.<br>Disclaimer: This website provides general information and referral/enquiry options. Products are subject to provider eligibility, approval, fees and terms. Account opening, credit card approval, credit score or returns are not guaranteed. Verify the bank/provider's official terms before sharing documents or making payments. Green RALD Finance is not a bank and does not represent that it is affiliated with any bank unless separately authorized.</div></div></footer>
+
+<footer>
+<div class="wrap">
+<div class="footgrid">
+<div>
+<div class="brand" style="color:white;margin-bottom:12px">
+<span class="brandmark">GR</span>
+<span>GREEN RALD FINANCE<small>SMART FINANCIAL SERVICES</small></span>
+</div>
+<p>Banking aur financial services ki information aur enquiry ke liye aapka online destination.</p>
+</div>
+<div><h4>Quick Links</h4><ul><li><a href="#services">Services</a></li><li><a href="#cibil">CIBIL Score</a></li><li><a href="#emi">EMI Calculator</a></li></ul></div>
+<div><h4>Contact</h4><ul><li>WhatsApp: <a href="https://wa.me/918418802885">+91 84188 02885</a></li><li><a href="https://www.cibil.com/freecibilscore">Official CIBIL Website</a></li></ul></div>
+</div>
+<div class="disclaimer">© <span id="year"></span> Green RALD Finance. All rights reserved.<br>
+Disclaimer: This website provides general information and referral/enquiry options. Products are subject to provider eligibility, approval, fees and terms. Account opening, credit card approval, credit score or returns are not guaranteed. Verify the bank/provider's official terms before sharing documents or making payments. Green RALD Finance is not a bank and does not represent that it is affiliated with any bank unless separately authorized.
+</div>
+</div>
+</footer>
+
 <a class="waFloat" href="https://wa.me/918418802885">☏ Chat on WhatsApp</a>
+
 <script>
 const banks=[
 {name:'Kotak 811 Zero Balance Account',desc:'Zero balance savings account with debit-card benefits and eligible offers.',label:'KOTAK 811',style:'color:#c62828',url:'https://leads.banksathi.com/?h=WmFhTkFvdThyZjJ6R1ZpN3JpMzg2QT09'},
@@ -38,8 +341,63 @@ const banks=[
 {name:'Equitas 2.0 Savings Account',desc:'Savings account option with digital banking and debit-card features.',label:'EQUITAS',style:'color:#225c9c',url:'https://leads.banksathi.com/?h=VTc0ckt1YURoUFRUL2JNcldvK004UT09'},
 {name:'DBS digibank Savings Account',desc:'Digital savings account with app-based banking features.',label:'DBS digibank',style:'color:#b51e2b',url:'https://leads.banksathi.com/?h=VnF4d2ZRUnc4Rjg0WVlMS2FpcFNPQT09'}
 ];
-const grid=document.getElementById('bankGrid');grid.innerHTML=banks.map((b,i)=>`<article class="bankCard"><div class="bankLogo"><span class="wordLogo" style="${b.style}">${b.label}</span></div><h3>${b.name}</h3><p>${b.desc}</p><a class="btn green" href="${b.url}" target="_blank" rel="noopener noreferrer">Apply Now ↗</a><div class="brandStamp">GREEN RALD FINANCE • BANK PARTNER ${i+1}</div></article>`).join('');
-document.getElementById('showBanks').addEventListener('click',()=>{const area=document.getElementById('bankArea');area.classList.toggle('show');document.getElementById('showBanks').textContent=area.classList.contains('show')?'Hide Banks ↑':'Apply Now →';if(area.classList.contains('show'))area.scrollIntoView({behavior:'smooth',block:'start'});});
-const nav=document.getElementById('nav');document.getElementById('menu').addEventListener('click',()=>nav.classList.toggle('open'));nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
-const amount=document.getElementById('amount'),rate=document.getElementById('rate'),years=document.getElementById('years'),money=n=>new Intl.NumberFormat('en-IN',{style:'currency',currency:'INR',maximumFractionDigits:0}).format(n);function calc(){const p=+amount.value,r=+rate.value/1200,n=+years.value*12,emi=r===0?p/n:p*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);document.getElementById('amountLabel').textContent=money(p);document.getElementById('rateLabel').textContent=rate.value+'%';document.getElementById('yearsLabel').textContent=years.value+(+years.value===1?' Year':' Years');document.getElementById('emiValue').textContent=money(emi);document.getElementById('principal').textContent=money(p);document.getElementById('interest').textContent=money(emi*n-p);document.getElementById('total').textContent=money(emi*n)}[amount,rate,years].forEach(x=>x.addEventListener('input',calc));document.getElementById('reset').addEventListener('click',()=>{amount.value=500000;rate.value=12;years.value=5;calc()});document.getElementById('year').textContent=new Date().getFullYear();calc();
-</script></body></html>
+
+const dematPartners=[
+{name:'Upstox Demat Account',desc:'Zero account opening charges, first-year AMC offer and paperless onboarding. Check current terms before applying.',label:'UPSTOX',style:'color:#6b35a5',url:'https://leads.banksathi.com/?h=MktoNy9IWHdWN1pNTzRLejM2d2tnZz09'},
+{name:'Bajaj Finserv Demat & Trading Account',desc:'Demat and trading account with product and brokerage options. Review applicable charges and terms.',label:'BAJAJ FINSERV',style:'color:#164b8d',url:'https://leads.banksathi.com/?h=YzUycE9NbGxOZE9DZk1Kdi9pVnFaUT09'},
+{name:'Kotak Trading & Demat Account',desc:'Trading and Demat account with online onboarding. Check brokerage, eligibility and current conditions.',label:'KOTAK',style:'color:#c62828',url:'https://leads.banksathi.com/?h=ekJ0d3Q0TWxEODdSNGYycWI1QnJkQT09'}
+];
+
+function makeCards(items,gridId,category){
+document.getElementById(gridId).innerHTML=items.map((b,i)=>`
+<article class="bankCard">
+<div class="bankLogo"><span class="wordLogo" style="${b.style}">${b.label}</span></div>
+<h3>${b.name}</h3>
+<p>${b.desc}</p>
+<a class="btn green" href="${b.url}" target="_blank" rel="noopener noreferrer">Apply Now ↗</a>
+<div class="brandStamp">GREEN RALD FINANCE • ${category} ${i+1}</div>
+</article>`).join('');
+}
+makeCards(banks,'bankGrid','BANK PARTNER');
+makeCards(dematPartners,'dematGrid','DEMAT PARTNER');
+
+function toggleArea(buttonId,areaId,openText,closeText){
+document.getElementById(buttonId).addEventListener('click',()=>{
+const area=document.getElementById(areaId);
+area.classList.toggle('show');
+document.getElementById(buttonId).textContent=area.classList.contains('show')?closeText:openText;
+if(area.classList.contains('show'))area.scrollIntoView({behavior:'smooth',block:'start'});
+});
+}
+toggleArea('showBanks','bankArea','Apply Now →','Hide Banks ↑');
+toggleArea('showDemat','dematArea','Apply Now →','Hide Options ↑');
+
+const nav=document.getElementById('nav');
+document.getElementById('menu').addEventListener('click',()=>nav.classList.toggle('open'));
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+
+const amount=document.getElementById('amount');
+const rate=document.getElementById('rate');
+const years=document.getElementById('years');
+const money=n=>new Intl.NumberFormat('en-IN',{style:'currency',currency:'INR',maximumFractionDigits:0}).format(n);
+
+function calc(){
+const p=+amount.value,r=+rate.value/1200,n=+years.value*12;
+const emi=r===0?p/n:p*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);
+document.getElementById('amountLabel').textContent=money(p);
+document.getElementById('rateLabel').textContent=rate.value+'%';
+document.getElementById('yearsLabel').textContent=years.value+(+years.value===1?' Year':' Years');
+document.getElementById('emiValue').textContent=money(emi);
+document.getElementById('principal').textContent=money(p);
+document.getElementById('interest').textContent=money(emi*n-p);
+document.getElementById('total').textContent=money(emi*n);
+}
+[amount,rate,years].forEach(x=>x.addEventListener('input',calc));
+document.getElementById('reset').addEventListener('click',()=>{
+amount.value=500000;rate.value=12;years.value=5;calc();
+});
+document.getElementById('year').textContent=new Date().getFullYear();
+calc();
+</script>
+</body>
+</html>
